@@ -19,10 +19,10 @@ body {
     font-weight: 700;
 }
 
-[data-bs-theme=light] .navbar-automatic {
+[data-bs-theme=light] .navbar-adaptive {
     background-color: var( --bs-light);
 }
 
-[data-bs-theme=dark] .navbar-automatic {
+[data-bs-theme=dark] .navbar-adaptive {
     background-color: var(--bs-dark-bg-subtle);
 }
