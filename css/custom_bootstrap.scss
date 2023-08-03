@@ -1,0 +1,11 @@
+$body-bg: #f8fbff;
+$body-bg-dark: #0D2237;
+$body-color: #0D2237;
+
+$headings-font-family:"Bahnschrift";
+
+@import "../node_modules/bootstrap/scss/_functions";
+@import "../node_modules/bootstrap/scss/_variables";
+@import "../node_modules/bootstrap/scss/_mixins";
+
+@import "../node_modules/bootstrap/scss/bootstrap"
