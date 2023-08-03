@@ -35,8 +35,8 @@
   --bs-info: #0dcaf0;
   --bs-warning: #ffc107;
   --bs-danger: #dc3545;
-  --bs-light: #dbecf4;
-  --bs-dark: #2a5060;
+  --bs-light: #def1fa;
+  --bs-dark: #2c5465;
   --bs-mint: #18e4a4;
   --bs-pastelGreen: #b7ffd6;
   --bs-pastelYellow: #fff0a2;
@@ -51,8 +51,8 @@
   --bs-info-rgb: 13, 202, 240;
   --bs-warning-rgb: 255, 193, 7;
   --bs-danger-rgb: 220, 53, 69;
-  --bs-light-rgb: 219, 236, 244;
-  --bs-dark-rgb: 42, 80, 96;
+  --bs-light-rgb: 222, 241, 250;
+  --bs-dark-rgb: 44, 84, 101;
   --bs-mint-rgb: 24, 228, 164;
   --bs-pastelGreen-rgb: 183, 255, 214;
   --bs-pastelYellow-rgb: 255, 240, 162;
@@ -2028,13 +2028,13 @@ progress {
 
 .table-light {
   --bs-table-color: #000;
-  --bs-table-bg: #dbecf4;
-  --bs-table-border-color: #c5d4dc;
-  --bs-table-striped-bg: #d0e0e8;
+  --bs-table-bg: #def1fa;
+  --bs-table-border-color: #c8d9e1;
+  --bs-table-striped-bg: #d3e5ee;
   --bs-table-striped-color: #000;
-  --bs-table-active-bg: #c5d4dc;
+  --bs-table-active-bg: #c8d9e1;
   --bs-table-active-color: #000;
-  --bs-table-hover-bg: #cbdae2;
+  --bs-table-hover-bg: #cddfe7;
   --bs-table-hover-color: #000;
   color: var(--bs-table-color);
   border-color: var(--bs-table-border-color);
@@ -2042,13 +2042,13 @@ progress {
 
 .table-dark {
   --bs-table-color: #fff;
-  --bs-table-bg: #2a5060;
-  --bs-table-border-color: #3f6270;
-  --bs-table-striped-bg: #355968;
+  --bs-table-bg: #2c5465;
+  --bs-table-border-color: #416574;
+  --bs-table-striped-bg: #375d6d;
   --bs-table-striped-color: #fff;
-  --bs-table-active-bg: #3f6270;
+  --bs-table-active-bg: #416574;
   --bs-table-active-color: #fff;
-  --bs-table-hover-bg: #3a5d6c;
+  --bs-table-hover-bg: #3c6171;
   --bs-table-hover-color: #fff;
   color: var(--bs-table-color);
   border-color: var(--bs-table-border-color);
@@ -3121,36 +3121,36 @@ textarea.form-control-lg {
 
 .btn-light {
   --bs-btn-color: #000;
-  --bs-btn-bg: #dbecf4;
-  --bs-btn-border-color: #dbecf4;
+  --bs-btn-bg: #def1fa;
+  --bs-btn-border-color: #def1fa;
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #bac9cf;
-  --bs-btn-hover-border-color: #afbdc3;
-  --bs-btn-focus-shadow-rgb: 186, 201, 207;
+  --bs-btn-hover-bg: #bdcdd5;
+  --bs-btn-hover-border-color: #b2c1c8;
+  --bs-btn-focus-shadow-rgb: 189, 205, 213;
   --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #afbdc3;
-  --bs-btn-active-border-color: #a4b1b7;
+  --bs-btn-active-bg: #b2c1c8;
+  --bs-btn-active-border-color: #a7b5bc;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #000;
-  --bs-btn-disabled-bg: #dbecf4;
-  --bs-btn-disabled-border-color: #dbecf4;
+  --bs-btn-disabled-bg: #def1fa;
+  --bs-btn-disabled-border-color: #def1fa;
 }
 
 .btn-dark {
   --bs-btn-color: #fff;
-  --bs-btn-bg: #2a5060;
-  --bs-btn-border-color: #2a5060;
+  --bs-btn-bg: #2c5465;
+  --bs-btn-border-color: #2c5465;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #4a6a78;
-  --bs-btn-hover-border-color: #3f6270;
-  --bs-btn-focus-shadow-rgb: 74, 106, 120;
+  --bs-btn-hover-bg: #4c6e7c;
+  --bs-btn-hover-border-color: #416574;
+  --bs-btn-focus-shadow-rgb: 76, 110, 124;
   --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #557380;
-  --bs-btn-active-border-color: #3f6270;
+  --bs-btn-active-bg: #567684;
+  --bs-btn-active-border-color: #416574;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #2a5060;
-  --bs-btn-disabled-border-color: #2a5060;
+  --bs-btn-disabled-bg: #2c5465;
+  --bs-btn-disabled-border-color: #2c5465;
 }
 
 .btn-mint {
@@ -3392,36 +3392,36 @@ textarea.form-control-lg {
 }
 
 .btn-outline-light {
-  --bs-btn-color: #dbecf4;
-  --bs-btn-border-color: #dbecf4;
+  --bs-btn-color: #def1fa;
+  --bs-btn-border-color: #def1fa;
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #dbecf4;
-  --bs-btn-hover-border-color: #dbecf4;
-  --bs-btn-focus-shadow-rgb: 219, 236, 244;
+  --bs-btn-hover-bg: #def1fa;
+  --bs-btn-hover-border-color: #def1fa;
+  --bs-btn-focus-shadow-rgb: 222, 241, 250;
   --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #dbecf4;
-  --bs-btn-active-border-color: #dbecf4;
+  --bs-btn-active-bg: #def1fa;
+  --bs-btn-active-border-color: #def1fa;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #dbecf4;
+  --bs-btn-disabled-color: #def1fa;
   --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #dbecf4;
+  --bs-btn-disabled-border-color: #def1fa;
   --bs-gradient: none;
 }
 
 .btn-outline-dark {
-  --bs-btn-color: #2a5060;
-  --bs-btn-border-color: #2a5060;
+  --bs-btn-color: #2c5465;
+  --bs-btn-border-color: #2c5465;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #2a5060;
-  --bs-btn-hover-border-color: #2a5060;
-  --bs-btn-focus-shadow-rgb: 42, 80, 96;
+  --bs-btn-hover-bg: #2c5465;
+  --bs-btn-hover-border-color: #2c5465;
+  --bs-btn-focus-shadow-rgb: 44, 84, 101;
   --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #2a5060;
-  --bs-btn-active-border-color: #2a5060;
+  --bs-btn-active-bg: #2c5465;
+  --bs-btn-active-border-color: #2c5465;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #2a5060;
+  --bs-btn-disabled-color: #2c5465;
   --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #2a5060;
+  --bs-btn-disabled-border-color: #2c5465;
   --bs-gradient: none;
 }
 
@@ -7388,8 +7388,8 @@ textarea.form-control-lg {
   text-decoration-color: RGBA(var(--bs-light-rgb), var(--bs-link-underline-opacity, 1)) !important;
 }
 .link-light:hover, .link-light:focus {
-  color: RGBA(226, 240, 246, var(--bs-link-opacity, 1)) !important;
-  text-decoration-color: RGBA(226, 240, 246, var(--bs-link-underline-opacity, 1)) !important;
+  color: RGBA(229, 244, 251, var(--bs-link-opacity, 1)) !important;
+  text-decoration-color: RGBA(229, 244, 251, var(--bs-link-underline-opacity, 1)) !important;
 }
 
 .link-dark {
@@ -7397,8 +7397,8 @@ textarea.form-control-lg {
   text-decoration-color: RGBA(var(--bs-dark-rgb), var(--bs-link-underline-opacity, 1)) !important;
 }
 .link-dark:hover, .link-dark:focus {
-  color: RGBA(34, 64, 77, var(--bs-link-opacity, 1)) !important;
-  text-decoration-color: RGBA(34, 64, 77, var(--bs-link-underline-opacity, 1)) !important;
+  color: RGBA(35, 67, 81, var(--bs-link-opacity, 1)) !important;
+  text-decoration-color: RGBA(35, 67, 81, var(--bs-link-underline-opacity, 1)) !important;
 }
 
 .link-mint {

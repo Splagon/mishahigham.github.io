@@ -7,11 +7,11 @@ $pastelPurple: #ddccff;
 $steelBlue: #2c5465;
 $darkSteelBlue: #19313b;
 
+$light: #def1fa;
+$dark: #2c5465;
+
 $body-bg: #f3fbff;
 $body-color: $darkSteelBlue;
-
-$light: #dbecf4;
-$dark: #2a5060;
 
 $min-contrast-ratio: 2;
 
@@ -60,7 +60,7 @@ $colors: (
         "warning": $orange,
         "danger": $red,
         "light": $light,
-        "dark": $darkSteelBlue,
+        "dark": $dark,
     );
 }
 
@@ -73,8 +73,8 @@ $colors: (
         "info": $pastelPurple,
         "warning": $orange,
         "danger": $red,
-        "light": $dark,
-        "dark": $darkSteelBlue,
+        "light": $light,
+        "dark": $dark,
     );
 }
 

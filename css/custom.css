@@ -10,9 +10,19 @@ body {
 }
 
 .folded {
-    font-family: 'Borel';
+    font-family: 'Tektur';
+    font-weight: 400;
 }
 
 .folded.bold {
-    font-family: 'Borel';
+    font-family: 'Tektur';
+    font-weight: 700;
+}
+
+[data-bs-theme=light] .navbar-automatic {
+    background-color: var( --bs-light);
+}
+
+[data-bs-theme=dark] .navbar-automatic {
+    background-color: var(--bs-dark-bg-subtle);
 }
