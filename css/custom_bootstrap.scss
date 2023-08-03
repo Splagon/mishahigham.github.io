@@ -1,9 +1,84 @@
+$mint: #18e4a4;
+$pastelGreen: #b7ffd6;
+$pastelYellow: #fff0a2;
+$pastelPink: #ffa7dc;
+$pastelBlue: #dbf3ff;
+$pastelPurple: #ddccff;
+$steelBlue: #2c5465;
+$darkSteelBlue: #19313b;
+
 $body-bg: #f3fbff;
-$body-bg-dark: #1f3d49;
-$body-color: #1f3d49;
+$body-color: $darkSteelBlue;
+
+$light: #dbecf4;
+$dark: #2a5060;
+
+$min-contrast-ratio: 2;
+
+$custom-colors: (
+    "mint": $mint,
+    "pastelGreen": $pastelGreen,
+    "pastelYellow": $pastelYellow,
+    "pastelPink": $pastelPink,
+    "pastelBlue": $pastelBlue,
+    "pastelPurple": $pastelPurple,
+    "steelBlue": $steelBlue,
+    "darkSteelBlue": $darkSteelBlue,
+);
+
+$custom-theme-colors : (
+    "mint": $mint,
+    "pastelGreen": $pastelGreen,
+    "pastelYellow": $pastelYellow,
+    "pastelPink": $pastelPink,
+    "pastelBlue": $pastelBlue,
+    "pastelPurple": $pastelPurple,
+    "steelBlue": $steelBlue,
+    "darkSteelBlue": $darkSteelBlue,
+);
 
 @import "../node_modules/bootstrap/scss/_functions";
 @import "../node_modules/bootstrap/scss/_variables";
 @import "../node_modules/bootstrap/scss/_mixins";
+
+$colors: (
+    "red": #d82e2e,
+    "pink": #ff61c0,
+    "yellow": #ffe35c,
+    "orange": #ff742e,
+    "green": $mint,
+    "teal": #008080,
+);
+
+@include color-mode(light) {
+    $theme-colors : (
+        "primary": $yellow,
+        "secondary": $pastelGreen,
+        "tertiary": $pink,
+        "success": $green,
+        "info": $pastelPurple,
+        "warning": $orange,
+        "danger": $red,
+        "light": $light,
+        "dark": $darkSteelBlue,
+    );
+}
+
+@include color-mode(dark) {
+    $theme-colors : (
+        "primary": $yellow,
+        "secondary": $pastelGreen,
+        "tertiary": $pink,
+        "success": $green,
+        "info": $pastelPurple,
+        "warning": $orange,
+        "danger": $red,
+        "light": $dark,
+        "dark": $darkSteelBlue,
+    );
+}
+
+$colors: map-merge($colors, $custom-colors);
+$theme-colors: map-merge($theme-colors, $custom-theme-colors);
 
 @import "../node_modules/bootstrap/scss/bootstrap"

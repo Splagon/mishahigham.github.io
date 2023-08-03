@@ -1,5 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Borel');
+@import url('https://fonts.googleapis.com/css?family=Tektur:400,700');
 
 body {
-    font-family: 'Borel', Helvetica;
+    font-family: Helvetica;
+}
+
+.handwriting {
+    font-family: 'Borel';
+}
+
+.folded {
+    font-family: 'Borel';
+}
+
+.folded.bold {
+    font-family: 'Borel';
 }
