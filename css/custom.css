@@ -115,3 +115,7 @@ body {
         top:-15px;
     }
 }
+
+a.subtle{
+    color: var(--bs-body-color)
+}
