@@ -9,37 +9,38 @@
         <title>Misha Higham</title>
     </head>
     <body>
-        <nav class="navbar navbar-expand-sm navbar-adaptive">
+        <nav class="navbar navbar-expand navbar-adaptive border border-1 border-dark">
             <div class="container-fluid">
-                <a class="navbar-brand ml-1 bodoni-thin bold fs-6" href="./">
+                <a class="navbar-brand ml-1 fs-6" href="./">
                     <img src="./images/mah_logo_no_bg_black_border.png" width="30" height="30" class="align-middle mb-1" alt="MAH">
                     MISHA HIGHAM
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler border-0" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
                     <span class="navbar-toggler-icon"></span>
-                </button>              
-                <div class="collapse navbar-collapse pb-1" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="./projects/">Projects</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./experience/">Experience</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./contact-me/">Contact Me</a>
-                        </li>
+                </button>             
+                <div class="collapse navbar-collapse pb-1" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a href="./projects/" class="nav-link">Projects</a></li>
+                        <li class="nav-item"><a href="./experience/" class="nav-link">Experience</a></li>
+                        <li class="nav-item"><a href="./contact-me/" class="nav-link">Contact Me</a></li>
                     </ul>
-                </div> 
+                </div>
             </div>
-            
         </nav>
         <div class="container mx-auto">
             <div class="container text-center p-0 my-5">
-                <h2>Hi I Am</h1>
-                <h1 class="handwriting mt-4">Misha Higham</h1>
+                <h1>Hi I Am</h1>
+                
+                <h1 class="handwriting mt-4 bounce" style="font-size: 3.25em;">
+                    <span>M</span><span>i</span><span>s</span><span>h</span><span>a</span> <span>H</span><span>i</span><span>g</span><span>h</span><span>a</span><span>m</span>
+                </h1>
+                <h6 class="pt-0 font-stretch">- Full Stack Software Developer -</h6>
             </div>
-            <p1>Hello and welcome to my amazing website.</p1>
+            <p class="text-lg-center text-xs-center mx-3" style="font-size: 1.3em;">
+                I am a full stack software engineer currently based out of London. I have 
+                experience in a multitude of areas from game development in unity, to building
+                front- and backends of websites, to data analysis.
+            </p>
         </div>
     </body>
 </html>
