@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Borel');
 @import url('https://fonts.googleapis.com/css?family=Tektur:400,700');
+@import url('https://fonts.googleapis.com/css?family=Instrument%20Serif');
+@import url('https://fonts.googleapis.com/css?family=Bodoni%20Moda:400,700,900');
 
 body {
-    font-family: Helvetica;
+    font-family: 'Bodoni Moda';
 }
 
 .handwriting {
@@ -14,13 +16,31 @@ body {
     font-weight: 400;
 }
 
-.folded.bold {
+.folded-bold {
     font-family: 'Tektur';
     font-weight: 700;
 }
 
+.fancy {
+    font-family: 'Instrument Serif';
+    font-weight: 400;
+}
+
+.bodoni {
+    font-family: 'Bodoni Moda';
+    font-weight: 400;
+}
+
+.bodoni-thin {
+    font-family: 'Bodoni Moda';
+    font-weight: 400;
+}
+
+
+
 [data-bs-theme=light] .navbar-adaptive {
-    background-color: var( --bs-light);
+    border-radius: 2px;
+    border-color: var( --bs-light);
 }
 
 [data-bs-theme=dark] .navbar-adaptive {

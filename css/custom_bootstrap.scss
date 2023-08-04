@@ -5,12 +5,12 @@ $pastelPink: #ffa7dc;
 $pastelBlue: #dbf3ff;
 $pastelPurple: #ddccff;
 $steelBlue: #2c5465;
-$darkSteelBlue: #19313b;
+$darkSteelBlue: #274957;
 
 $light: #def1fa;
-$dark: #2c5465;
+$dark: $steelBlue;
 
-$body-bg: #f3fbff;
+$body-bg: #ffe8c6;
 $body-color: $darkSteelBlue;
 
 $min-contrast-ratio: 2;
@@ -50,7 +50,7 @@ $colors: (
     "teal": #008080,
 );
 
-@include color-mode(light) {
+@include color-scheme(light) {
     $theme-colors : (
         "primary": $yellow,
         "secondary": $pastelGreen,
@@ -64,9 +64,9 @@ $colors: (
     );
 }
 
-@include color-mode(dark) {
+@include color-scheme(dark) {
     $theme-colors : (
-        "primary": $yellow,
+        "primary": $pastelGreen,
         "secondary": $pastelGreen,
         "tertiary": $pink,
         "success": $green,
