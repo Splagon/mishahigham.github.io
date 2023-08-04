@@ -50,33 +50,17 @@ $colors: (
     "teal": #008080,
 );
 
-@include color-scheme(light) {
-    $theme-colors : (
-        "primary": $yellow,
-        "secondary": $pastelGreen,
-        "tertiary": $pink,
-        "success": $green,
-        "info": $pastelPurple,
-        "warning": $orange,
-        "danger": $red,
-        "light": $light,
-        "dark": $dark,
-    );
-}
-
-@include color-scheme(dark) {
-    $theme-colors : (
-        "primary": $pastelGreen,
-        "secondary": $pastelGreen,
-        "tertiary": $pink,
-        "success": $green,
-        "info": $pastelPurple,
-        "warning": $orange,
-        "danger": $red,
-        "light": $light,
-        "dark": $dark,
-    );
-}
+$theme-colors : (
+    "primary": $pastelYellow,
+    "secondary": $pastelGreen,
+    "tertiary": $pastelPink,
+    "success": $mint,
+    "info": $pastelPurple,
+    "warning": $orange,
+    "danger": $red,
+    "light": $light,
+    "dark": $dark,
+);
 
 $colors: map-merge($colors, $custom-colors);
 $theme-colors: map-merge($theme-colors, $custom-theme-colors);
