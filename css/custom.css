@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Tektur:400,700');
 @import url('https://fonts.googleapis.com/css?family=Instrument%20Serif');
 @import url('https://fonts.googleapis.com/css?family=Bodoni%20Moda:400,700,900');
+@import url('https://fonts.googleapis.com/css?family=Libre%20Bodoni:400,700');
 
 body {
     font-family: 'Bodoni Moda';
@@ -16,8 +17,7 @@ body {
     font-weight: 400;
 }
 
-.folded-bold {
-    font-family: 'Tektur';
+.folded.bold {
     font-weight: 700;
 }
 
@@ -26,9 +26,13 @@ body {
     font-weight: 400;
 }
 
-.bodoni {
-    font-family: 'Bodoni Moda';
+.bodoni-thick {
+    font-family: 'Libre Bodni';
     font-weight: 400;
+}
+
+.bodoni-thick.bold {
+    font-weight: 700;
 }
 
 .bodoni-thin {
@@ -36,11 +40,21 @@ body {
     font-weight: 400;
 }
 
+.bodoni-thin.bold {
+    font-weight: 700;
+}
 
+.bodoni-thin.extrabold {
+    font-weight: 900;
+}
+
+.navbar-brand {
+    color: var(--bs-body-color)
+}
 
 [data-bs-theme=light] .navbar-adaptive {
     border-radius: 2px;
-    border-color: var( --bs-light);
+    border-color: var(--bs-light-bg-subtle);
 }
 
 [data-bs-theme=dark] .navbar-adaptive {
