@@ -51,6 +51,10 @@ body {
     color: var(--bs-body-color)
 }
 
+footer div {
+    background-color: var(--bs-pastelBlue);
+}
+
 [data-bs-theme=light] .navbar-adaptive {
     background-color: var(--bs-pastelBlue);
 }
