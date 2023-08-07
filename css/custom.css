@@ -125,5 +125,24 @@ body {
 }
 
 a.subtle{
-    color: var(--bs-body-color)
+    color: var(--bs-body-color);
+    text-decoration: none;
+    font-family: "Libre Bodni";
+}
+
+
+.card.project-content {
+    border-radius: 0;
+    border-width: 2px;
+}
+
+[data-bs-theme=light] .card.project-content {
+    background-color: var(--bs-pastelYellow);
+    border-color: var(--bs-dark);
+}
+
+.card-footer {
+    padding-top: 5px;
+    padding-bottom: 8px;
+    vertical-align: middle;
 }
