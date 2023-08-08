@@ -151,7 +151,7 @@ a.subtle{
     border-color: var(--bs-dark);
 }
 
-[data-bs-theme=light] form button{
+[data-bs-theme=light] form button, [data-bs-theme=light] form button:hover{
     background-color: var(--bs-pastelPurple);
     border-color: var(--bs-dark);
 }
