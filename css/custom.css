@@ -146,3 +146,23 @@ a.subtle{
     padding-bottom: 8px;
     vertical-align: middle;
 }
+
+.btn, [class*=btn-]{
+    border-color: var(--bs-dark);
+}
+
+[data-bs-theme=light] form button{
+    background-color: var(--bs-pastelPurple);
+    border-color: var(--bs-dark);
+}
+
+[data-bs-theme=light] form input, [data-bs-theme=light] form textarea,
+[data-bs-theme=light] form input:focus, [data-bs-theme=light] form textarea:focus {
+    background-color: var(--bs-pastelYellow);
+    border-color: var(--bs-dark);
+}
+
+.form, [class*=form-]{
+    border-color: var(--bs-dark);
+}
+
