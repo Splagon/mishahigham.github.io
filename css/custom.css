@@ -130,6 +130,10 @@ a.subtle{
     font-family: "Libre Bodni";
 }
 
+a.disabled {
+    color: gray;
+    pointer-events: none;
+  }
 
 .card.project-content {
     border-radius: 0;
