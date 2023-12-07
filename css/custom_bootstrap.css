@@ -16,7 +16,7 @@
   --bs-pastelGreen: #f0fff1;
   --bs-pastelYellow: #fff7cd;
   --bs-pastelPink: #ffccfa;
-  --bs-pastelBlue: #d3ecf1;
+  --bs-pastelBlue: #caecec;
   --bs-pastelPurple: #e8e0f7;
   --bs-steelBlue: #2c5465;
   --bs-darkSteelBlue: #274957;
@@ -42,7 +42,7 @@
   --bs-pastelGreen: #f0fff1;
   --bs-pastelYellow: #fff7cd;
   --bs-pastelPink: #ffccfa;
-  --bs-pastelBlue: #d3ecf1;
+  --bs-pastelBlue: #caecec;
   --bs-pastelPurple: #e8e0f7;
   --bs-steelBlue: #2c5465;
   --bs-darkSteelBlue: #274957;
@@ -59,7 +59,7 @@
   --bs-pastelGreen-rgb: 240, 255, 241;
   --bs-pastelYellow-rgb: 255, 247, 205;
   --bs-pastelPink-rgb: 255, 204, 250;
-  --bs-pastelBlue-rgb: 211, 236, 241;
+  --bs-pastelBlue-rgb: 202, 236, 236;
   --bs-pastelPurple-rgb: 232, 224, 247;
   --bs-steelBlue-rgb: 44, 84, 101;
   --bs-darkSteelBlue-rgb: 39, 73, 87;
@@ -98,8 +98,8 @@
   --bs-body-line-height: 1.5;
   --bs-body-color: #274957;
   --bs-body-color-rgb: 39, 73, 87;
-  --bs-body-bg: #ffe8c6;
-  --bs-body-bg-rgb: 255, 232, 198;
+  --bs-body-bg: #ffefd6;
+  --bs-body-bg-rgb: 255, 239, 214;
   --bs-emphasis-color: #000;
   --bs-emphasis-color-rgb: 0, 0, 0;
   --bs-secondary-color: rgba(39, 73, 87, 0.75);
@@ -2484,10 +2484,10 @@ textarea.form-control-lg {
   outline: 0;
 }
 .form-range:focus::-webkit-slider-thumb {
-  box-shadow: 0 0 0 1px #ffe8c6, 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  box-shadow: 0 0 0 1px #ffefd6, 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 .form-range:focus::-moz-range-thumb {
-  box-shadow: 0 0 0 1px #ffe8c6, 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  box-shadow: 0 0 0 1px #ffefd6, 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 .form-range::-moz-focus-outer {
   border: 0;
@@ -3242,19 +3242,19 @@ textarea.form-control-lg {
 
 .btn-pastelBlue {
   --bs-btn-color: #000;
-  --bs-btn-bg: #d3ecf1;
-  --bs-btn-border-color: #d3ecf1;
+  --bs-btn-bg: #caecec;
+  --bs-btn-border-color: #caecec;
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #daeff3;
-  --bs-btn-hover-border-color: #d7eef2;
-  --bs-btn-focus-shadow-rgb: 179, 201, 205;
+  --bs-btn-hover-bg: #d2efef;
+  --bs-btn-hover-border-color: #cfeeee;
+  --bs-btn-focus-shadow-rgb: 172, 201, 201;
   --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #dcf0f4;
-  --bs-btn-active-border-color: #d7eef2;
+  --bs-btn-active-bg: #d5f0f0;
+  --bs-btn-active-border-color: #cfeeee;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #000;
-  --bs-btn-disabled-bg: #d3ecf1;
-  --bs-btn-disabled-border-color: #d3ecf1;
+  --bs-btn-disabled-bg: #caecec;
+  --bs-btn-disabled-border-color: #caecec;
 }
 
 .btn-pastelPurple {
@@ -3530,19 +3530,19 @@ textarea.form-control-lg {
 }
 
 .btn-outline-pastelBlue {
-  --bs-btn-color: #d3ecf1;
-  --bs-btn-border-color: #d3ecf1;
+  --bs-btn-color: #caecec;
+  --bs-btn-border-color: #caecec;
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #d3ecf1;
-  --bs-btn-hover-border-color: #d3ecf1;
-  --bs-btn-focus-shadow-rgb: 211, 236, 241;
+  --bs-btn-hover-bg: #caecec;
+  --bs-btn-hover-border-color: #caecec;
+  --bs-btn-focus-shadow-rgb: 202, 236, 236;
   --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #d3ecf1;
-  --bs-btn-active-border-color: #d3ecf1;
+  --bs-btn-active-bg: #caecec;
+  --bs-btn-active-border-color: #caecec;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #d3ecf1;
+  --bs-btn-disabled-color: #caecec;
   --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #d3ecf1;
+  --bs-btn-disabled-border-color: #caecec;
   --bs-gradient: none;
 }
 
@@ -7512,8 +7512,8 @@ textarea.form-control-lg {
   text-decoration-color: RGBA(var(--bs-pastelBlue-rgb), var(--bs-link-underline-opacity, 1)) !important;
 }
 .link-pastelBlue:hover, .link-pastelBlue:focus {
-  color: RGBA(220, 240, 244, var(--bs-link-opacity, 1)) !important;
-  text-decoration-color: RGBA(220, 240, 244, var(--bs-link-underline-opacity, 1)) !important;
+  color: RGBA(213, 240, 240, var(--bs-link-opacity, 1)) !important;
+  text-decoration-color: RGBA(213, 240, 240, var(--bs-link-underline-opacity, 1)) !important;
 }
 
 .link-pastelPurple {
