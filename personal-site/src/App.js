@@ -1,12 +1,19 @@
-import React, { Component } from 'react';class App extends Component {
-  render() {
-    return (
-      <div>
-        <h2>Hi I am</h2>
-        <h1>Misha Higham</h1>
-        <p>I may not be pretty now, but in the words of Alexander Hamilton: "Just you waaaaaitttt!".</p>
-      </div>   
-    );
-  }
+import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import MainApp from './main/MainApp';
+import PalavraApp from './palavra/PalavraApp';
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Switch>
+        {/* Routes starting with /palavra render the Palavra PWA application */}
+        <Route path="/palavra" component={PalavraApp} />
+        {/* All other routes render the main site */}
+        <Route path="/" component={MainApp} />
+      </Switch>
+    </BrowserRouter>
+  );
 }
+
 export default App;
