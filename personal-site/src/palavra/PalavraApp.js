@@ -1,12 +1,12 @@
-import React, { Component } from 'react';class App extends Component {
-  render() {
-    return (
-      <div>
-        <h2>Hi I am</h2>
-        <h1>Misha Higham</h1>
-        <p>I may not be pretty now, but in the words of Alexander Hamilton: "Just you waaaaaitttt!".</p>
-      </div>   
-    );
-  }
+import React from 'react';
+
+const PalavraApp = () => {
+  return (
+    <div>
+      <h1>Palavra</h1>
+      <h2>One word a day, 365 words a year.</h2>
+      <p>Wan't to increase your vocabulary? Do it at your own pace with our simple app to learn words in our wide variety of languages!</p>
+    </div>   
+  );
 }
-export default App;
+export default PalavraApp;
