@@ -43,7 +43,7 @@ registerRoute(
 
     return true;
   },
-  createHandlerBoundToURL(process.env.PUBLIC_URL + '/palavra/index.html')
+  createHandlerBoundToURL(process.env.PUBLIC_URL + '/index.html')
 );
 
 // An example runtime caching route for requests that aren't handled by the
@@ -67,6 +67,17 @@ self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();
   }
+});
+
+self.addEventListener('install', (event) => {
+  event.waitUntil(
+    caches.open('palavra-cache').then((cache) => {
+      return cache.addAll([
+        '/palavra/index.html',  // Ensure this is cached
+        '/palavra/', 
+      ]);
+    })
+  );
 });
 
 // Any other custom service worker logic can go here.
