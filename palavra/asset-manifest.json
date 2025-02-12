@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/palavra/static/css/main.dc1b6196.css",
-    "main.js": "/palavra/static/js/main.b054d1e7.js",
+    "main.js": "/palavra/static/js/main.c51970fd.js",
     "static/js/156.a3d6bd53.chunk.js": "/palavra/static/js/156.a3d6bd53.chunk.js",
-    "static/media/mah_logo_no_bg_black_border.png": "/palavra/static/media/mah_logo_no_bg_black_border.2fb43774060f402986f8.png",
+    "static/media/palavra.png": "/palavra/static/media/palavra.b83bc0028c81f2301265.png",
     "service-worker.js": "/palavra/service-worker.js",
     "index.html": "/palavra/index.html",
     "main.dc1b6196.css.map": "/palavra/static/css/main.dc1b6196.css.map",
-    "main.b054d1e7.js.map": "/palavra/static/js/main.b054d1e7.js.map",
+    "main.c51970fd.js.map": "/palavra/static/js/main.c51970fd.js.map",
     "156.a3d6bd53.chunk.js.map": "/palavra/static/js/156.a3d6bd53.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dc1b6196.css",
-    "static/js/main.b054d1e7.js"
+    "static/js/main.c51970fd.js"
   ]
 }
