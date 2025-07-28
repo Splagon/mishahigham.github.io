@@ -39,10 +39,10 @@ const Home: React.FC = () => {
         <img
           src={mah_logo_no_bg_black_border}
           alt="MAH"
-          className="logo m-10"
+          className="logo m-10 w-[12em] sm:w-[20em] object-contain"
         />
-        <p className="font-['playfair'] font-medium italic text-4xl">hi i am</p>
-        <h1 className="font-['playwrite']">Misha Higham</h1>
+        <p className="font-['playfair'] font-medium italic text-2xl sm:text-3xl md:text-4xl">hi i am</p>
+        <h1 className="font-['playwrite'] text-3xl sm:text-4xl md:text-5xl">Misha Higham</h1>
         <div className="font-['playfair'] font-medium mt-10">
           <SequentialParagraphs
             lines={[
@@ -51,7 +51,7 @@ const Home: React.FC = () => {
               "i've done everything from integrating systems to data engineering, but learning by building is how i grow best.",
               "just like this website!",
             ]}
-            className="flex flex-col gap-2 text-2xl"
+            className="flex flex-col gap-2 text-xl md:text-2xl"
           />
           <motion.div
             initial={{ opacity: 0, y: 10 }}

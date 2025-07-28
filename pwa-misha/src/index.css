@@ -35,7 +35,7 @@
   --margin-size-for-page: 1em;
   margin-left: var(--margin-size-for-page);
   margin-right: var(--margin-size-for-page);
-  max-width: 50em;
+  max-width: 45rem;
 }
 
 body {
@@ -44,11 +44,6 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
 }
 
 button {
