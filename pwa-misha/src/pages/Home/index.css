@@ -9,6 +9,7 @@
 .logo:hover {
   filter: drop-shadow(0 0 2em var(--colour));
 }
+
 @media (prefers-color-scheme: dark) {
 .logo {
   filter: drop-shadow(0 0 2em var(--colour));

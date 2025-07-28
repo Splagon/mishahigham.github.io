@@ -22,7 +22,7 @@ const Navbar = forwardRef<HTMLElement, NavbarProps>(({ sticky, currentPath, page
   return (
     <nav
       ref={ref}
-      className={` py-4 flex justify-center transition-all duration-300 ease-in-out ${
+      className={`sticky top-0 z-50 w-screen py-4 flex justify-center transition-all duration-300 ease-in-out ${
         sticky ? "fixed top-0 left-0 shadow-md z-50" : "relative"
       }`}
     >

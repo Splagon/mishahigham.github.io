@@ -11,26 +11,21 @@
 nav {
     background-color: var(--colour-bg);
     filter: drop-shadow(0 0 0.5em color-mix(in srgb, var(--colour), transparent 10%));
-    width: 100%;
 }
 
 .nav-link {
     font-family: var(--nav-element-font);
     color: var(--nav-element-unselected-colour);
 }
-
 .nav-link:hover {
     color: var(--nav-element-hover-colour);
 }
-
 .nav-link:active {
     color: var(--nav-element-pressed-colour);
 }
-
 .nav-link.selected {
     color: var(--nav-element-selected-colour);
 }
-
 .nav-link.selected:hover {
     color: color-mix(in srgb, var(--nav-element-selected-colour), transparent 30%);
 }

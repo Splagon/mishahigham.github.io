@@ -32,9 +32,10 @@
 }
 
 .page {
-  --margin-size-for-page: 5em;
+  --margin-size-for-page: 1em;
   margin-left: var(--margin-size-for-page);
   margin-right: var(--margin-size-for-page);
+  max-width: 50em;
 }
 
 body {
