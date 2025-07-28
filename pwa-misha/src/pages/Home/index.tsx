@@ -39,11 +39,11 @@ const Home: React.FC = () => {
         <img
           src={mah_logo_no_bg_black_border}
           alt="MAH"
-          className="logo mb-8 w-[12em] sm:w-[20em] object-contain"
+          className="logo mb-6 sm:mb-8 w-[10em] sm:w-[13em] object-contain"
         />
         <p className="font-['playfair'] font-medium italic text-2xl sm:text-3xl md:text-4xl">hi i am</p>
         <h1 className="font-['playwrite'] text-3xl sm:text-4xl md:text-5xl">Misha Higham</h1>
-        <div className="font-['playfair'] font-medium mt-10">
+        <div className="font-['playfair'] font-medium mt-3 sm:mt-5">
           <SequentialParagraphs
             lines={[
               "hey!",
@@ -51,13 +51,13 @@ const Home: React.FC = () => {
               "i've done everything from integrating systems to data engineering, but learning by building is how i grow best.",
               "just like this website!",
             ]}
-            className="flex flex-col gap-2 text-xl md:text-2xl"
+            className="flex flex-col gap-2 text-lg md:text-xl"
           />
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 4, duration: 0.8 }}
-            className="flex flex-col items-center mt-10 gap-2"
+            className="flex flex-col items-center mt-5 sm:mt-7 md:mt-10 gap-2"
           >
             <p>scroll to see more</p>
             <ChevronDown className="w-8 h-8 animate-bounce" />
