@@ -47,7 +47,7 @@ const Home: React.FC = () => {
           <SequentialParagraphs
             lines={[
               "hey!",
-              "i work in tech, currently in a graduate role.",
+              "i work in tech, currently in a grad role.",
               "i've done everything from integrating systems to data engineering, but learning by building is how i grow best.",
               "just like this website!",
             ]}
