@@ -6,8 +6,11 @@ import App from './App.tsx'
 
 registerSW()
 
-createRoot(document.getElementById('root')!).render(
+const rootElement = document.getElementById('root')!;
+rootElement.style.padding = '0'; // overrides the global padding
+
+createRoot(rootElement).render(
   <StrictMode>
     <App />
   </StrictMode>,
-)
+);

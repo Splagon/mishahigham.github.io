@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+:root{
+    --nav-element-font: "Outfit";
+    --nav-element-unselected-colour: gray;
+    --nav-element-hover-colour: #662fe7;
+    --nav-element-pressed-colour: color-mix(in srgb, var(--nav-element-hover-colour), transparent 30%);
+    --nav-element-selected-colour: var(--colour);
+}
+
+nav {
+    background-color: var(--colour-bg);
+    filter: drop-shadow(0 0 0.5em color-mix(in srgb, var(--colour), transparent 10%));
+    width: 100%;
+}
+
+.nav-link {
+    font-family: var(--nav-element-font);
+    color: var(--nav-element-unselected-colour);
+}
+
+.nav-link:hover {
+    color: var(--nav-element-hover-colour);
+}
+
+.nav-link:active {
+    color: var(--nav-element-pressed-colour);
+}
+
+.nav-link.selected {
+    color: var(--nav-element-selected-colour);
+}
+
+.nav-link.selected:hover {
+    color: color-mix(in srgb, var(--nav-element-selected-colour), transparent 30%);
+}
+.nav-link.selected:active {
+    color: color-mix(in srgb, var(--nav-element-selected-colour), transparent 30%);
+}
+
+.nav-element{
+    font-family: var(--nav-element-font);
+    color: var(--nav-element-unselected-colour);
+}
