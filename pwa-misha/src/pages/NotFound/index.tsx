@@ -8,7 +8,7 @@ export default function NotFound() {
         <h2 className="font-['playfair'] font-bold italic text-2xl pt-9">Oops!</h2>
         <p className="font-['playfair'] text-lg pt-1 pb-10">discovering something that doesn't exist</p>
 
-        <a href="www.mishahigham.co.uk" className="pt-10 text-2xl">home</a>
+        <a href="" className="pt-10 text-2xl">home</a>
     </div>
   )
 }
