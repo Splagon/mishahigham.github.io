@@ -39,7 +39,7 @@ const Home: React.FC = () => {
         <img
           src={mah_logo_no_bg_black_border}
           alt="MAH"
-          className="logo m-10 w-[12em] sm:w-[20em] object-contain"
+          className="logo mb-8 w-[12em] sm:w-[20em] object-contain"
         />
         <p className="font-['playfair'] font-medium italic text-2xl sm:text-3xl md:text-4xl">hi i am</p>
         <h1 className="font-['playwrite'] text-3xl sm:text-4xl md:text-5xl">Misha Higham</h1>

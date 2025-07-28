@@ -1,6 +1,5 @@
 
 .logo {
-  padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
   filter: drop-shadow(0 0 1em var(--colour));
