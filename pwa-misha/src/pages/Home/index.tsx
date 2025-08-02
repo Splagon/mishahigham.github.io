@@ -35,11 +35,11 @@ const Home: React.FC = () => {
 
   return (
     <div className="flex flex-col gap-3 items-center">
-      <div id="page1" className="flex flex-col gap-3 items-center justify-center h-dvh page">
+      <div id="about" className="flex flex-col gap-3 page">
         <img
           src={mah_logo_no_bg_black_border}
           alt="MAH"
-          className="logo mb-6 sm:mb-8 w-[10em] sm:w-[13em] object-contain"
+          className="logo mb-6 w-[8em] xs:w-[13em] sm:mb-8 object-contain"
         />
         <p className="font-['playfair'] font-medium italic text-2xl sm:text-3xl md:text-4xl">hi i am</p>
         <h1 className="font-['playwrite'] text-3xl sm:text-4xl md:text-5xl">Misha Higham</h1>
@@ -47,9 +47,9 @@ const Home: React.FC = () => {
           <SequentialParagraphs
             lines={[
               "hey!",
-              "i work in tech, currently in a grad role.",
+              "i work as a tech graduate executive.",
               "i've done everything from integrating systems to data engineering, but learning by building is how i grow best.",
-              "just like this website!",
+              "just like with this website!",
             ]}
             className="flex flex-col gap-2 text-lg md:text-xl"
           />
@@ -57,7 +57,7 @@ const Home: React.FC = () => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 4, duration: 0.8 }}
-            className="flex flex-col items-center mt-5 sm:mt-7 md:mt-10 gap-2"
+            className="flex flex-col items-center mt-5 sm:mt-7 md:mt-[10rem] gap-2"
           >
             <p>scroll to see more</p>
             <ChevronDown className="w-8 h-8 animate-bounce" />
@@ -69,7 +69,7 @@ const Home: React.FC = () => {
 
       <div
         id="page2"
-        className="flex flex-col gap-3 items-center justify-center h-dvh page"
+        className="flex flex-col gap-3 page"
       >
         <h1>Page 2</h1>
       </div>

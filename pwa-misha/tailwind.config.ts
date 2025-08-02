@@ -13,6 +13,9 @@ const config: Config = {
         playwrite: ['Playwrite', 'serif'],
         playfair: ['Playfair', 'serif'],
       },
+      screens: {
+        xs: '400px',
+      }
     },
   },
   plugins: [],

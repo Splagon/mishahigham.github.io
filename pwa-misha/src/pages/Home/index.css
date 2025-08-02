@@ -4,6 +4,7 @@
   transition: filter 300ms;
   filter: drop-shadow(0 0 1em var(--colour));
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em var(--colour));
 }
