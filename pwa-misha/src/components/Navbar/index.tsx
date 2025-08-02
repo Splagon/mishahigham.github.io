@@ -8,13 +8,13 @@ interface Section {
 
 interface Page {
   name: string;
-  href: string; // e.g. "/page1"
+  href: string;
   sections?: Section[]; // sub-divs on the page
 }
 
 interface NavbarProps {
   sticky: boolean;
-  currentPath: string; // e.g. "/page1"
+  currentPath: string;
   pages: Page[];
 }
 

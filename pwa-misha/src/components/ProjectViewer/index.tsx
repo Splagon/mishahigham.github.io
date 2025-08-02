@@ -1,53 +1,20 @@
 import React from "react";
 import "./index.css"
-import footyRushPNG from "@assets/FootyRush.png"
-import roseLogoPNG from "@assets/RoseLogo.png"
-import moutains from "@assets/Mountains.png"
-
-
-type Project = {
-    name: string;
-    image: string;
-    href: string
-    start_date: Date,
-    end_date: Date,
-    description_short: string
-};
+import Project from "@types/Project"
+import { getTopProjectsInfo, getOtherProjectsInfo } from "@utils/getProjectsInfo";
 
 const PROJECTS_ROOT = '/projects'
 
-const TOP_PROJECTS: Project[] = [
-    { name: "Footy Rush",
-        image: footyRushPNG,
-        href: "/footy-rush",
-        start_date: new Date("01/09/2019"),
-        end_date: new Date("01/08/2022"),
-        description_short: "An Endless Runner Mobile game released onto the iOS Store"
-    },
-    { name: "Roses",
-        image: roseLogoPNG,
-        href: "/roses",
-        start_date: new Date("01/09/2018"),
-        end_date: new Date("01/08/2025"),
-        description_short: "An Endless Runner Mobile game released onto the iOS Store"
-    },
-    { name: "Mountains",
-        image: moutains,
-        href: "/mountains",
-        start_date: new Date("01/09/2000"),
-        end_date: new Date("01/08/2030"),
-        description_short: "Beautiful Mountains starked against a picturesque backdrop"
-    }
-]
+const TOP_PROJECTS: Project[] = getTopProjectsInfo();
+const OTHER_PROJECTS: Project[] = getOtherProjectsInfo();
 const NUMBER_OF_TOP_PROJECTS = TOP_PROJECTS.length;
-
-const OTHER_PROJECTS: Project[] = [
-
-]
 
 function ProjectCard(project: Project, index: number) {
     return (
-        <a key={index} className="projectCardWrapper relative flex mx-1 sm:mx-0 sm:!flex-row" href={PROJECTS_ROOT+project.href}>
+        <a key={index} id={project.name} 
+            className="projectCardWrapper relative flex mx-1 sm:mx-0 sm:!flex-row" 
+            href={PROJECTS_ROOT+project.href}
+        >
             <div className="image z-1 w-full -mb-3 sm:!mb-0 sm:!-mx-3 sm:!w-fit sm:!max-w-[6rem] md:!max-w-[7rem] lg:!max-w-[8rem]">
                 <img
                     src={project.image}
@@ -96,6 +63,8 @@ function OtherProjects(number_of_projects: number) {
             ProjectsWrapper("Other Projects", "other_projects_container", other_projects_to_show)
         )
     }
+    const currentPath = window.location.pathname;
+    if (currentPath == PROJECTS_ROOT) { return null };
     return (
       <a href={PROJECTS_ROOT}>
         <button>
