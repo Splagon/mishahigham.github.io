@@ -33,22 +33,6 @@
   }
 }
 
-.page {
-  --margin-size-for-page: 1em;
-  margin-left: var(--margin-size-for-page);
-  margin-right: var(--margin-size-for-page);
-  max-width: 45rem;
-  justify-content: start;
-  align-items: center;
-  height: calc(100svh - 60px);
-  padding-top: 1.75rem;
-  overflow: hidden;
-}
-.page.primary {
-  height: 100svh;
-  justify-content: center;
-}
-
 body {
   margin: 0;
   display: flex;
