@@ -4,29 +4,10 @@ import { ChevronDown } from "lucide-react";
 
 import { useSticky } from "@hooks/useSticky";
 import SequentialParagraphs from "@components/SequentialParagraphs";
+import ProjectViewer from "@components/ProjectViewer/index";
 import Navbar from "@components/Navbar/Navbar"
 import mah_logo_no_bg_black_border from '@assets/mah_logo_no_bg_black_border.png';
 import './index.css'
-
-const pages = [
-  {
-    name: "Home",
-      href: "/",
-      sections: [
-        { name: "About", anchor: "#about" },
-        { name: "Projects", anchor: "#projects" },
-      ],
-    },
-    {
-      name: "Blog",
-      href: "/blog",
-    },
-    {
-      name: "Contact",
-      href: "/contact",
-    },
-];
-
 
 const Home: React.FC = () => {
   const navRef = useRef<HTMLElement>(null);
@@ -35,7 +16,7 @@ const Home: React.FC = () => {
 
   return (
     <div className="flex flex-col gap-3 items-center">
-      <div id="about" className="flex flex-col gap-3 page">
+      <div id="home/about" className="flex flex-col gap-3 page primary">
         <img
           src={mah_logo_no_bg_black_border}
           alt="MAH"
@@ -57,7 +38,7 @@ const Home: React.FC = () => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 4, duration: 0.8 }}
-            className="flex flex-col items-center mt-5 sm:mt-7 md:mt-[10rem] gap-2"
+            className="flex flex-col items-center mt-5 sm:mt-7 sm:mt-[10rem] gap-2"
           >
             <p>scroll to see more</p>
             <ChevronDown className="w-8 h-8 animate-bounce" />
@@ -65,13 +46,10 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      <Navbar sticky={sticky} currentPath={currentPath} pages={pages} ref={navRef} />
+      <Navbar sticky={sticky} currentPath={currentPath} ref={navRef} />
 
-      <div
-        id="page2"
-        className="flex flex-col gap-3 page"
-      >
-        <h1>Page 2</h1>
+      <div id="home/top_projects" className="flex flex-col gap-3 page">
+        <ProjectViewer number_of_projects={3}></ProjectViewer>
       </div>
     </div>
   );

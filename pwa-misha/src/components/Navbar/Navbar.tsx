@@ -18,7 +18,17 @@ interface NavbarProps {
   pages: Page[];
 }
 
-const Navbar = forwardRef<HTMLElement, NavbarProps>(({ sticky, currentPath, pages }, ref) => {
+const pages = [
+  { name: "Home", href: "/",
+    sections: [
+      //{ name: "About", anchor: "#about" },
+      //{ name: "Projects", anchor: "#projects" },
+    ],
+  },
+  { name: "Projects", href: "/projects" },
+];
+
+const Navbar = forwardRef<HTMLElement, NavbarProps>(({ sticky, currentPath }, ref) => {
   return (
     <nav
       ref={ref}

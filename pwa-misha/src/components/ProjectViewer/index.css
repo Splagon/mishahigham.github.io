@@ -1,0 +1,48 @@
+.projectCardWrapper {
+    --pcw-border-width: 1px;
+    --pcw-border-radius: 1rem;
+    --pcw-colour: var(--colour-white);
+    --pcw-border-colour: color-mix(in srgb, var(--pcw-colour), transparent 50%);
+
+    align-items: center;
+}
+.projectCardWrapper.flex {
+    flex-direction: column;
+}
+
+.projectCardWrapper .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    img {
+        border-width: var(--pcw-border-width);
+        border-radius: var(--pcw-border-radius);
+        border-color: var(--pcw-border-colour);
+        background-color: var(--colour-bg);
+        object-fit: cover;
+        height: 100%;
+    }
+}
+
+.projectCardWrapper .info {
+    border-width: var(--pcw-border-width);
+    border-radius: var(--pcw-border-radius);
+    border-color: var(--pcw-border-colour);
+    background-color: color-mix(in srgb, var(--pcw-colour), transparent 95%);
+    font-family: 'Playfair';
+    padding: 0.8rem;
+    text-align: start;
+    h3 {
+        font-weight: 700;
+        font-size: 1.2rem;
+    }
+    h4 {
+        font-weight: 600;
+        font-size: 1.1rem;
+    }
+    p {
+        font-size: 1.0rem;
+    }
+}
+
