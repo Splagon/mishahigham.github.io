@@ -70,7 +70,7 @@ button {
 }
 button:focus,
 button:focus-visible {
-  box-shadow: 1px 1px;
+  box-shadow: 2px 2px;
   margin-left: 1px;
   margin-top: 1px;
   color: color-mix(in srgb, var(--button-colour), var(--colour-white) 20%);
@@ -78,9 +78,14 @@ button:focus-visible {
 
 @media (prefers-color-scheme: dark) {
   button {
-    color: color-mix(in srgb, var(--button-colour), var(--colour-white) 50%);
+    color: var(--colour);
     background-color: color-mix(in srgb, var(--colour-bg), var(--colour-white) 3%);
     box-shadow: 2px 2px;
+  }
+  button:focus,
+  button:focus-visible {
+    box-shadow: 1px 1px;
+    color: color-mix(in srgb, var(--button-colour), var(--colour-white) 30%);
   }
 }
 
