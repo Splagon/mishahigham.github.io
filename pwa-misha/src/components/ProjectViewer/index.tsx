@@ -9,27 +9,64 @@ const TOP_PROJECTS: Project[] = getTopProjectsInfo();
 const OTHER_PROJECTS: Project[] = getOtherProjectsInfo();
 const NUMBER_OF_TOP_PROJECTS = TOP_PROJECTS.length;
 
-function ProjectCard(project: Project, index: number) {
+function getDateRangeString(project: Project): string {
+    const project_start_date_year = project.start_date.getFullYear()
+    const project_end_date_year = project.end_date.getFullYear()
+    if (project_start_date_year == project_end_date_year) {
+        return (
+            project.start_date.toLocaleString('default', { month: 'short' }) +
+            " - " +
+            project.end_date.toLocaleString('default', { month: 'short' }) +
+            " " +
+            project_end_date_year
+        )
+    }
+    return project_start_date_year + " - " + project_end_date_year
+}
+
+function ProjectCardContents(project: Project) {
+    var img_bg = ""
+    if (project.needs_bg) {
+        img_bg = "needsBG" + " "
+    }
     return (
-        <a key={index} id={project.name} 
-            className="projectCardWrapper relative flex mx-1 sm:mx-0 sm:!flex-row" 
-            href={PROJECTS_ROOT+project.href}
-        >
-            <div className="image z-1 w-full -mb-3 sm:!mb-0 sm:!-mx-3 sm:!w-fit sm:!max-w-[6rem] md:!max-w-[7rem] lg:!max-w-[8rem]">
-                <img
-                    src={project.image}
-                    alt={project.name}
-                    className="!h-[3rem] sm:!h-full"
-                />
+        <>
+        <div className="image z-1 w-full -mb-3 sm:!mb-0 sm:!-mx-3 sm:!w-fit sm:!max-w-[6rem] md:!max-w-[7rem] lg:!max-w-[8rem]">
+            <img
+                src={project.image}
+                alt={project.name}
+                className={img_bg + "!h-[3rem] sm:!h-full"}
+            />
+        </div>
+        <div className="info z-0 sm:!ps-5">
+            <div className="flex gap-3">
+                <h3 className="flex-grow">{project.name}</h3>
+                <h4 className="flex-end text-right">{getDateRangeString(project)}</h4>
             </div>
-            <div className="info z-0 sm:!ps-5">
-                <div className="flex gap-3">
-                    <h3 className="flex-grow">{project.name}</h3>
-                    <h4 className="flex-end">{project.start_date.getFullYear()} - {project.end_date.getFullYear()}</h4>
-                </div>
-                <p>{project.description_short}</p>
-            </div>
-        </a>
+            <p>{project.description_short}</p>
+        </div>
+        </>
+    )
+}
+
+function ProjectCardWrapper(project: Project, index: number) {
+    const className = "projectCardWrapper relative flex mx-1 sm:mx-0 sm:!flex-row"
+    if (project.href) {
+        return (
+            <a 
+                key={index} 
+                id={project.name} 
+                className={className}
+                href={PROJECTS_ROOT+project.href}
+            >
+                {ProjectCardContents(project)}
+            </a>
+        )
+    }
+    return (
+        <div key={index} id={project.name} className={className}>
+            {ProjectCardContents(project)}
+        </div>
     )
 }
 
@@ -39,7 +76,7 @@ function ProjectsWrapper(_title: string, _id: string, _projects: Project[]) {
             <h2 className="font-['playwrite'] text-2xl mb-5 sm:text-4xl md:text-5xlm">{_title}</h2>
             <div id={_id} className="flex flex-col gap-2 sm:!gap-4 py-3 mb-5">
                 { _projects.map((project, index) => (
-                    ProjectCard(project, index)
+                    ProjectCardWrapper(project, index)
                 ))}
             </div>
         </>

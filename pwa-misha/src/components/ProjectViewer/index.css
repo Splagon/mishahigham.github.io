@@ -3,6 +3,7 @@
     --pcw-border-radius: 1rem;
     --pcw-colour: var(--colour-white);
     --pcw-border-colour: color-mix(in srgb, var(--colour-yellow), white 75%);
+    --pcw-background-color: color-mix(in srgb, var(--colour-yellow), transparent 40%);
 
     align-items: center;
 }
@@ -13,6 +14,7 @@
 @media (prefers-color-scheme: dark) {
     .projectCardWrapper {
        --pcw-border-colour: color-mix(in srgb, var(--pcw-colour), transparent 50%); 
+       --pcw-background-color: color-mix(in srgb, var(--pcw-colour), transparent 95%);
     }
 }
 
@@ -28,14 +30,19 @@
         background-color: var(--colour-bg);
         object-fit: cover;
         height: 100%;
+        
     }
+    img.needsBG {
+        background-color: var(--colour-yellow-strong);
+    }
+    
 }
 
 .projectCardWrapper .info {
     border-width: var(--pcw-border-width);
     border-radius: var(--pcw-border-radius);
     border-color: var(--pcw-border-colour);
-    background-color: color-mix(in srgb, var(--colour-yellow), transparent 40%);
+    background-color: var(--pcw-background-color);
     padding: 0.8rem;
     text-align: start;
     h3 {
@@ -54,6 +61,6 @@
 
 @media (prefers-color-scheme: dark) {
     .projectCardWrapper .info {
-       background-color: color-mix(in srgb, var(--pcw-colour), transparent 95%);
+       --hello: 1rem;
     }
 }
