@@ -2,12 +2,18 @@
     --pcw-border-width: 1px;
     --pcw-border-radius: 1rem;
     --pcw-colour: var(--colour-white);
-    --pcw-border-colour: color-mix(in srgb, var(--pcw-colour), transparent 50%);
+    --pcw-border-colour: color-mix(in srgb, var(--colour-yellow), white 75%);
 
     align-items: center;
 }
 .projectCardWrapper.flex {
     flex-direction: column;
+}
+
+@media (prefers-color-scheme: dark) {
+    .projectCardWrapper {
+       --pcw-border-colour: color-mix(in srgb, var(--pcw-colour), transparent 50%); 
+    }
 }
 
 .projectCardWrapper .image {
@@ -29,8 +35,7 @@
     border-width: var(--pcw-border-width);
     border-radius: var(--pcw-border-radius);
     border-color: var(--pcw-border-colour);
-    background-color: color-mix(in srgb, var(--pcw-colour), transparent 95%);
-    font-family: 'Playfair';
+    background-color: color-mix(in srgb, var(--colour-yellow), transparent 40%);
     padding: 0.8rem;
     text-align: start;
     h3 {
@@ -43,6 +48,12 @@
     }
     p {
         font-size: 1.0rem;
+        font-family: "Outfit";
     }
 }
 
+@media (prefers-color-scheme: dark) {
+    .projectCardWrapper .info {
+       background-color: color-mix(in srgb, var(--pcw-colour), transparent 95%);
+    }
+}

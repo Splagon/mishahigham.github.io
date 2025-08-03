@@ -22,9 +22,9 @@ const Home: React.FC = () => {
           alt="MAH"
           className="logo mb-6 w-[8em] xs:w-[13em] sm:mb-8 object-contain"
         />
-        <p className="font-['playfair'] font-medium italic text-2xl sm:text-3xl md:text-4xl">hi i am</p>
-        <h1 className="font-['playwrite'] text-3xl sm:text-4xl md:text-5xl">Misha Higham</h1>
-        <div className="font-['playfair'] font-medium mt-3 sm:mt-5">
+        <h3 className="font-medium italic text-2xl sm:text-3xl md:text-4xl">hi i am</h3>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl">Misha Higham</h1>
+        <div className="font-medium mt-3 sm:mt-5">
           <SequentialParagraphs
             lines={[
               "hey!",
@@ -33,6 +33,7 @@ const Home: React.FC = () => {
               "just like with this website!",
             ]}
             className="flex flex-col gap-2 text-lg md:text-xl"
+            p_className="font-['Playfair']"
           />
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -40,7 +41,7 @@ const Home: React.FC = () => {
             transition={{ delay: 4, duration: 0.8 }}
             className="flex flex-col items-center mt-5 sm:mt-7 sm:mt-[10rem] gap-2"
           >
-            <p>scroll to see more</p>
+            <p className="font-['Playfair']">scroll to see more</p>
             <ChevronDown className="w-8 h-8 animate-bounce" />
           </motion.div>
         </div>

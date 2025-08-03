@@ -18,9 +18,10 @@ const item = {
 type SequentialParagraphsProps = {
   lines: string[];
   className?: string;
+  p_className?: string;
 };
 
-export default function SequentialParagraphsText({ lines, className }: SequentialParagraphsProps) {
+export default function SequentialParagraphsText({ lines, className, p_className }: SequentialParagraphsProps) {
   return (
     <motion.div
       className={className}
@@ -29,7 +30,7 @@ export default function SequentialParagraphsText({ lines, className }: Sequentia
       animate="show"
     >
       {lines.map((line, idx) => (
-        <motion.p key={idx} variants={item}>
+        <motion.p key={idx} variants={item} className={p_className}>
           {line}
         </motion.p>
       ))}
