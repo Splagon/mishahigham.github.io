@@ -45,17 +45,23 @@
     background-color: var(--pcw-background-color);
     padding: 0.8rem;
     text-align: start;
+    width:100%; 
     h3 {
         font-weight: 700;
         font-size: 1.2rem;
+        line-height: 1.2em;
+        margin-block: auto;
     }
     h4 {
         font-weight: 600;
         font-size: 1.1rem;
+        line-height: 1em;
+        margin-block: auto;
     }
     p {
         font-size: 1.0rem;
         font-family: "Outfit";
+        padding-top: 5px;
     }
 }
 

@@ -6,7 +6,7 @@ import { getTopProjectsInfo, getOtherProjectsInfo } from "@utils/getProjectsInfo
 const PROJECTS_ROOT = '/projects'
 
 const TOP_PROJECTS: Project[] = getTopProjectsInfo();
-const OTHER_PROJECTS: Project[] = getOtherProjectsInfo();
+const OTHER_PROJECTS: Project[] = getOtherProjectsInfo(true);
 const NUMBER_OF_TOP_PROJECTS = TOP_PROJECTS.length;
 
 function getDateRangeString(project: Project): string {
@@ -24,30 +24,35 @@ function getDateRangeString(project: Project): string {
     return project_start_date_year + " - " + project_end_date_year
 }
 
-function ProjectCardContents(project: Project) {
-    var img_bg = ""
-    if (project.needs_bg) {
-        img_bg = "needsBG" + " "
-    }
+function ProjectCardImage(project: Project) {
+    const img_bg = (project.needs_bg) ? "needsBG" + " " : ""
     return (
-        <>
-        <div className="image z-1 w-full -mb-3 sm:!mb-0 sm:!-mx-3 sm:!w-fit sm:!max-w-[6rem] md:!max-w-[7rem] lg:!max-w-[8rem]">
+        <div className="image z-1 w-full -mb-2 sm:!mb-0 sm:!-mx-3 sm:!w-fit sm:!max-w-[6rem] md:!max-w-[7rem] lg:!max-w-[8rem]">
             <img
                 src={project.image}
                 alt={project.name}
                 className={img_bg + "!h-[3rem] sm:!h-full"}
             />
         </div>
-        <div className="info z-0 sm:!ps-5">
+    )
+}
+
+function ProjectCardContents(project: Project) {
+    return (
+        <>
+        {(project.image) ? ProjectCardImage(project) : null}
+        <div className="info z-0 sm:!ps-6">
             <div className="flex gap-3">
                 <h3 className="flex-grow">{project.name}</h3>
                 <h4 className="flex-end text-right">{getDateRangeString(project)}</h4>
             </div>
-            <p>{project.description_short}</p>
+            <p className="">{project.description_short}</p>
         </div>
         </>
     )
 }
+
+
 
 function ProjectCardWrapper(project: Project, index: number) {
     const className = "projectCardWrapper relative flex mx-1 sm:mx-0 sm:!flex-row"
@@ -73,7 +78,7 @@ function ProjectCardWrapper(project: Project, index: number) {
 function ProjectsWrapper(_title: string, _id: string, _projects: Project[]) {
     return (
         <>
-            <h2 className="font-['playwrite'] text-2xl mb-5 sm:text-4xl md:text-5xlm">{_title}</h2>
+            <h2 className="font-['playwrite'] text-2xl mb-2 sm:!mb-5 sm:text-4xl md:text-5xlm">{_title}</h2>
             <div id={_id} className="flex flex-col gap-2 sm:!gap-4 py-3 mb-5">
                 { _projects.map((project, index) => (
                     ProjectCardWrapper(project, index)

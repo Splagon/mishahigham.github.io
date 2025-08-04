@@ -1,6 +1,8 @@
+import Skill from "@types/Skill"
+
 export type Project = {
     name: string
-    image: string
+    image?: string
     needs_bg?: boolean
     href?: string
     start_date: Date,
@@ -8,4 +10,5 @@ export type Project = {
     description_short: string
     description_long?: string
     bullet_point_description?: string[]
+    skills?: Skill[]
 };

@@ -1,7 +1,8 @@
 import Project from "@types/Project"
+import { CSharp } from "@types/Skill"
 import footyRushPNG from "@assets/projects/FootyRush.png"
 import greggorfcPNG from "@assets/projects/GFC.png"
-import musicPNG from "@assets/projects/Music.png"
+import KclPNG from "@assets/projects/KCL.png"
 
 const TOP_PROJECTS: Project[] = [
     { name: "Footy Rush",
@@ -9,7 +10,8 @@ const TOP_PROJECTS: Project[] = [
         //href: "/footy-rush",
         start_date: new Date("2019-09-01"),
         end_date: new Date("2022-08-01"),
-        description_short: "An Endless Runner Mobile game released onto the iOS Store"
+        description_short: "An Endless Runner Mobile game released onto the iOS Store",
+        skills: [CSharp]
     },
 ]
 
@@ -24,7 +26,7 @@ const OTHER_PROJECTS: Project[] = [
         bullet_point_description: ["Partook in a website development project using Django, Python, and HTML", "Developed the front- and backend of the system which allows the user to log into their own account and protect their confidential financial data.","Incorporated package APIs to allow to up-to-date conversions between currencies.","Developed the gamification elements of the system such as adding a fun, interactive mascot to encourage users to stay within targets and user groups to allow for friendly competition to encourage meeting targets.","Used Git and GitHub to employ automated testing protections on master and peer code approval and reviews to maintain code quality and ensure functionality.","Developed as part of a group of 8."]
     },
     { name: "Music School Booking System",
-        image: musicPNG,
+        image: KclPNG,
         start_date: new Date("2022-11-01"),
         end_date: new Date("2022-12-01"),
         description_short: "A Music Lesson Booking Website - KCL coursework",
@@ -33,17 +35,15 @@ const OTHER_PROJECTS: Project[] = [
     }
 ]
 
-const PROJECTS = [
-    {
-        "top_projects": TOP_PROJECTS,
-        "other_projects": OTHER_PROJECTS
-    }
-]
+const PROJECTS = TOP_PROJECTS.concat(OTHER_PROJECTS)
 
 export function getTopProjectsInfo() {
   return TOP_PROJECTS
 }
 
-export function getOtherProjectsInfo() {
+export function getOtherProjectsInfo(sortedByDate: boolean = false) {
+    if (sortedByDate) {
+        return OTHER_PROJECTS.sort((a, b) => b.end_date.getTime() - a.end_date.getTime());
+    }
     return OTHER_PROJECTS
 }
