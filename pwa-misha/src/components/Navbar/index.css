@@ -3,7 +3,7 @@
 :root{
     --nav-element-font: "Outfit";
     --nav-element-unselected-colour: gray;
-    --nav-element-hover-colour: #662fe7;
+    --nav-element-hover-colour: #ff4800;
     --nav-element-pressed-colour: color-mix(in srgb, var(--nav-element-hover-colour), transparent 30%);
     --nav-element-selected-colour: var(--colour);
 }
