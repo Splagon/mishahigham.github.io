@@ -1,10 +1,10 @@
-import Project from "@types/Project"
+import Experience from "@types/Experience"
 import { CSharp } from "@types/Skill"
 import footyRushPNG from "@assets/projects/FootyRush.png"
 import greggorfcPNG from "@assets/projects/GFC.png"
 import KclPNG from "@assets/projects/KCL.png"
 
-const TOP_PROJECTS: Project[] = [
+const TOP_PROJECTS: Experience[] = [
     { name: "Footy Rush",
         image: footyRushPNG,
         //href: "/footy-rush",
@@ -15,7 +15,7 @@ const TOP_PROJECTS: Project[] = [
     },
 ]
 
-const OTHER_PROJECTS: Project[] = [
+const OTHER_PROJECTS: Experience[] = [
     { name: "Greggor Financial Companion",
         image: greggorfcPNG,
         needs_bg: true,
@@ -36,6 +36,12 @@ const OTHER_PROJECTS: Project[] = [
 ]
 
 const PROJECTS = TOP_PROJECTS.concat(OTHER_PROJECTS)
+
+export function getProjectsInfo(project_name: string) {
+    return (!project_name) ? PROJECTS : (
+        PROJECTS.filter((project, i) => project.name == project_name)
+    )
+}
 
 export function getTopProjectsInfo() {
   return TOP_PROJECTS

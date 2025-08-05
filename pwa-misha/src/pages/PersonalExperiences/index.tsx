@@ -1,12 +1,12 @@
 import React from "react"
 import type { ReactNode } from "react"
 import PageWrapper from "@components/PageWrapper/index";
-import ProjectViewer from "@components/ExperiencesViewer/Projects/index";
+import PersonalExperiencesViewer from "@components/ExperiencesViewer/PersonalExperiences/index";
 
 export default function Projects() {
     return (
         <PageWrapper stickyNavbar={true}>
-            <ProjectViewer />
+            <PersonalExperiencesViewer />
         </PageWrapper>
     )
 }

@@ -1,0 +1,116 @@
+.experienceCardsContainer {
+    display: flex;
+    flex-direction: column;
+    --ecw-colour: var(--colour-white);
+    --ecw-border-colour: color-mix(in srgb, var(--colour-yellow), white 75%);
+    --ecw-background-colour: color-mix(in srgb, var(--colour-yellow), transparent 40%);
+    --vertical-line-colour: color-mix(in srgb, var(--colour), transparent 0%);
+}
+
+@media (prefers-color-scheme: dark) {
+    .experienceCardsContainer {
+       --ecw-border-colour: color-mix(in srgb, var(--ecw-colour), black 35%); 
+       --ecw-background-colour: color-mix(in srgb, var(--ecw-colour), transparent 95%);
+    }
+}
+
+.experienceCardsContainer.vertLine {
+    position: relative;
+}
+.experienceCardsContainer.vertLine::before {
+    z-index: 0;
+    content: '';
+    position: absolute;
+    top: -100px;
+    bottom: 0;
+    left: -33px;
+    width: 2px;
+    background-color: var(--vertical-line-colour);
+    backdrop-filter: blur(1em);
+    height: calc(100lvh - 32px);
+    
+}
+
+.experienceCardWrapper {
+    --ecw-border-width: 1px;
+    --ecw-border-radius: 1rem;
+
+    position: relative;
+    align-items: center;
+}
+.experienceCardWrapper.flex {
+    flex-direction: column;
+}
+
+.experienceCardWrapper .image {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    img {
+        border-width: var(--ecw-border-width);
+        border-radius: var(--ecw-border-radius);
+        border-color: var(--ecw-border-colour);
+        background-color: var(--colour-bg);
+        object-fit: cover;
+        height: 100%;        
+    }
+    img.needsBG {
+        background-color: var(--colour-yellow-strong);
+    }
+    
+}
+.experienceCardsContainer.vertLine .experienceCardWrapper .image::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -50px;
+    transform: translateY(-50%);
+    width: 11px;
+    height: 11px;
+    background-color: var(--vertical-line-colour);
+    z-index: 1;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+@media (width >= 40rem) {
+    .experienceCardsContainer.vertLine::before {
+        left: -73px
+    }
+    .experienceCardsContainer.vertLine .experienceCardWrapper .image::before {
+        left: -65px
+    }
+}
+
+.experienceCardWrapper .info {
+    position: relative;
+    z-index: 2;
+    border-width: var(--ecw-border-width);
+    border-radius: var(--ecw-border-radius);
+    border-color: var(--ecw-border-colour);
+    background-color: var(--ecw-background-colour);
+    backdrop-filter:blur(3px);
+    padding: 0.8rem;
+    text-align: start;
+    width:100%; 
+    h3 {
+        font-weight: 700;
+        font-size: 1.2rem;
+        line-height: 1.2em;
+        margin-block: auto;
+    }
+    h4 {
+        font-weight: 600;
+        font-size: 1.1rem;
+        line-height: 1em;
+        margin-block: auto;
+    }
+    p {
+        font-size: 1.0rem;
+        font-family: "Outfit";
+        padding-top: 5px;
+    }
+}

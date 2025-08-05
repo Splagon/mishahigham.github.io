@@ -26,6 +26,7 @@ const pages = [
     ],
   },
   { name: "Projects", href: "/projects" },
+  { name: "Experience", href: "/experience" },
 ];
 
 const Navbar = forwardRef<HTMLElement, NavbarProps>(({ sticky, currentPath }, ref) => {

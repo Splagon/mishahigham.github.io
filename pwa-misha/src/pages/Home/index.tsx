@@ -4,7 +4,7 @@ import { ChevronDown } from "lucide-react";
 
 import { useSticky } from "@hooks/useSticky";
 import SequentialParagraphs from "@components/SequentialParagraphs";
-import ProjectViewer from "@components/ProjectViewer/index";
+import ProjectViewer from "@components/Experiencesviewer/Projects/index";
 import Navbar from "@components/Navbar/index"
 import mah_logo_no_bg_black_border from '@assets/mah_logo_no_bg_black_border.png';
 import './index.css'

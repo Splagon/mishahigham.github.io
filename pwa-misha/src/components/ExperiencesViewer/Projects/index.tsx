@@ -1,30 +1,15 @@
 import React from "react";
-import "./index.css"
-import Project from "@types/Project"
+import "../index.css"
+import Experience, { getDateRangeString } from "@types/Experience"
 import { getTopProjectsInfo, getOtherProjectsInfo } from "@utils/getProjectsInfo";
 
 const PROJECTS_ROOT = '/projects'
 
-const TOP_PROJECTS: Project[] = getTopProjectsInfo();
-const OTHER_PROJECTS: Project[] = getOtherProjectsInfo(true);
+const TOP_PROJECTS: Experience[] = getTopProjectsInfo();
+const OTHER_PROJECTS: Experience[] = getOtherProjectsInfo(true);
 const NUMBER_OF_TOP_PROJECTS = TOP_PROJECTS.length;
 
-function getDateRangeString(project: Project): string {
-    const project_start_date_year = project.start_date.getFullYear()
-    const project_end_date_year = project.end_date.getFullYear()
-    if (project_start_date_year == project_end_date_year) {
-        return (
-            project.start_date.toLocaleString('default', { month: 'short' }) +
-            " - " +
-            project.end_date.toLocaleString('default', { month: 'short' }) +
-            " " +
-            project_end_date_year
-        )
-    }
-    return project_start_date_year + " - " + project_end_date_year
-}
-
-function ProjectCardImage(project: Project) {
+function ProjectCardImage(project: Experience) {
     const img_bg = (project.needs_bg) ? "needsBG" + " " : ""
     return (
         <div className="image z-1 w-full -mb-2 sm:!mb-0 sm:!-mx-3 sm:!w-fit sm:!max-w-[6rem] md:!max-w-[7rem] lg:!max-w-[8rem]">
@@ -37,7 +22,7 @@ function ProjectCardImage(project: Project) {
     )
 }
 
-function ProjectCardContents(project: Project) {
+function ProjectCardContents(project: Experience) {
     return (
         <>
         {(project.image) ? ProjectCardImage(project) : null}
@@ -54,8 +39,8 @@ function ProjectCardContents(project: Project) {
 
 
 
-function ProjectCardWrapper(project: Project, index: number) {
-    const className = "projectCardWrapper relative flex mx-1 sm:mx-0 sm:!flex-row"
+function ProjectCardWrapper(project: Experience, index: number) {
+    const className = "experienceCardWrapper relative flex mx-1 sm:mx-0 sm:!flex-row"
     if (project.href) {
         return (
             <a 
@@ -75,11 +60,11 @@ function ProjectCardWrapper(project: Project, index: number) {
     )
 }
 
-function ProjectsWrapper(_title: string, _id: string, _projects: Project[]) {
+function ProjectsWrapper(_title: string, _id: string, _projects: Experience[]) {
     return (
         <>
             <h2 className="font-['playwrite'] text-2xl mb-2 sm:!mb-5 sm:text-4xl md:text-5xlm">{_title}</h2>
-            <div id={_id} className="flex flex-col gap-2 sm:!gap-4 py-3 mb-5">
+            <div id={_id} className="experienceCardsContainer gap-3 py-3 mb-5 sm:!gap-4">
                 { _projects.map((project, index) => (
                     ProjectCardWrapper(project, index)
                 ))}
