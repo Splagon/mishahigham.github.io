@@ -13,9 +13,6 @@ const TOP_PROJECTS: Experience[] = [
         description_short: "An Endless Runner Mobile game released onto the iOS Store",
         skills: [CSharp]
     },
-]
-
-const OTHER_PROJECTS: Experience[] = [
     { name: "Greggor Financial Companion",
         image: greggorfcPNG,
         needs_bg: true,
@@ -24,7 +21,10 @@ const OTHER_PROJECTS: Experience[] = [
         description_short: "An interactive, gamified Finance Tracker - KCL coursework",
         description_long: "A website made to allow for users to track income and expenditure using gamification to encourage users to stick to their goals. Made as part of a coursework at King's College London.",
         bullet_point_description: ["Partook in a website development project using Django, Python, and HTML", "Developed the front- and backend of the system which allows the user to log into their own account and protect their confidential financial data.","Incorporated package APIs to allow to up-to-date conversions between currencies.","Developed the gamification elements of the system such as adding a fun, interactive mascot to encourage users to stay within targets and user groups to allow for friendly competition to encourage meeting targets.","Used Git and GitHub to employ automated testing protections on master and peer code approval and reviews to maintain code quality and ensure functionality.","Developed as part of a group of 8."]
-    },
+    }
+]
+
+const OTHER_PROJECTS: Experience[] = [
     { name: "Music School Booking System",
         image: KclPNG,
         start_date: new Date("2022-11-01"),
