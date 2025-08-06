@@ -12,7 +12,7 @@ const NUMBER_OF_TOP_PROJECTS = TOP_PROJECTS.length;
 function ProjectCardImage(project: Experience) {
     const img_bg = (project.needs_bg) ? "needsBG" + " " : ""
     return (
-        <div className="image z-1 w-full -mb-2 sm:!mb-0 sm:!-mx-3 sm:!w-fit sm:!max-w-[6rem] md:!max-w-[7rem] lg:!max-w-[8rem]">
+        <div className="image z-1 w-full -mb-2 sm:!mb-0 sm:!-mx-3 sm:!w-fit sm:!max-w-[5rem] md:!max-w-[6rem] lg:!max-w-[7rem]">
             <img
                 src={project.image}
                 alt={project.name}
