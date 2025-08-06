@@ -17,6 +17,7 @@
 
   color: var(--colour);
   background-color: var(--colour-bg);
+  overflow-x: hidden;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
