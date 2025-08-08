@@ -86,6 +86,7 @@ button {
   box-shadow: 3px 3px;
   cursor: pointer;
   transition: border-color 0.25s;
+  margin-bottom: 5px;
 }
 button:focus,
 button:focus-visible {

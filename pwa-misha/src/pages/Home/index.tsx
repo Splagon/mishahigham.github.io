@@ -16,7 +16,7 @@ const Home: React.FC = () => {
   const currentPath = window.location.pathname;
 
   return (
-    <div className="flex flex-col items-center mb-8">
+    <div className="flex flex-col items-center mb-8 sm:gap-15">
       <div id="home_about" className="flex flex-col gap-3 page primary">
         <img
           src={mah_logo_no_bg_black_border}
