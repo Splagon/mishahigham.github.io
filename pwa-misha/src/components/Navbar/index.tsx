@@ -1,4 +1,6 @@
 import React, { forwardRef } from "react";
+import { Home, FolderCodeIcon, BriefcaseBusiness } from "lucide-react";
+import type { ReactNode } from 'react';
 import './index.css'
 
 interface Section {
@@ -10,6 +12,7 @@ interface Page {
   name: string;
   href: string;
   sections?: Section[]; // sub-divs on the page
+  icon: ReactNode
 }
 
 interface NavbarProps {
@@ -19,14 +22,14 @@ interface NavbarProps {
 }
 
 const pages = [
-  { name: "Home", href: "/",
+  { name: "Home", href: "/", icon: <Home/>,
     sections: [
       //{ name: "About", anchor: "#about" },
       //{ name: "Projects", anchor: "#projects" },
     ],
   },
-  { name: "Projects", href: "/projects" },
-  { name: "Experience", href: "/experience" },
+  { name: "Projects", href: "/projects", icon: <FolderCodeIcon/>},
+  { name: "Experience", href: "/experience", icon:< BriefcaseBusiness/> },
 ];
 
 const Navbar = forwardRef<HTMLElement, NavbarProps>(({ sticky, currentPath }, ref) => {
@@ -50,7 +53,17 @@ const Navbar = forwardRef<HTMLElement, NavbarProps>(({ sticky, currentPath }, re
                   href={page.href}
                   className={`nav-link ${isCurrentPage ? "selected" : ""}`}
                 >
-                  {page.name}
+                  {(isCurrentPage) ? 
+                  ( <>
+                    <span className="">{page.name}</span>
+                    </>
+                  ) :
+                  ( <>
+                    <span className="hidden sm:!inline">{page.name}</span>
+                    <span className="sm:hidden">{page.icon}</span>
+                    </>)
+                  }
+                  
                 </a>
 
                 {/* Only show sections if on current page */}
