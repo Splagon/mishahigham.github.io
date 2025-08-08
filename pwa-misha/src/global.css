@@ -21,7 +21,7 @@
   --colour-bg: var(--colour-yellow-subtle);
   --colour-bg-strong: var(--colour-yellow-strong);
 
-  --colour-secondary: #2cb0c8;
+  --colour-secondary: #1799b1;
   --colour-white: #f2fbfc;
 
   color: var(--colour);
@@ -79,7 +79,7 @@ button {
   font-size: 1em;
   font-weight: 700;
   font-family: "Outfit";
-  --button-colour: var(--colour);
+  --button-colour: var(--colour-secondary);
   color: var(--button-colour);
   background-color: var(--colour-yellow-strong);
   /* background-color: color-mix(in srgb, var(--colour-yellow-strong), var(--colour-white) 15%); */
@@ -97,7 +97,6 @@ button:focus-visible {
 
 @media (prefers-color-scheme: dark) {
   button {
-    color: var(--colour);
     background-color: color-mix(in srgb, var(--colour-bg), var(--colour-white) 3%);
     box-shadow: 2px 2px;
   }

@@ -4,6 +4,7 @@ import Experience, { getDateRangeString } from "@types/Experience"
 import { getTopProjectsInfo, getOtherProjectsInfo } from "@utils/getProjectsInfo";
 
 const PROJECTS_ROOT = '/projects'
+const CURRENT_PATH = window.location.pathname;
 
 const TOP_PROJECTS: Experience[] = getTopProjectsInfo();
 const OTHER_PROJECTS: Experience[] = getOtherProjectsInfo(true);
@@ -31,7 +32,7 @@ function ProjectCardContents(project: Experience) {
                 <h3 className="flex grow">{project.name}</h3>
                 <h4 className="flex end text-right">{getDateRangeString(project)}</h4>
             </div>
-            <p className="">{project.description_short}</p>
+            <p className={(!CURRENT_PATH.startsWith(PROJECTS_ROOT)) ? "line-clamp-3":""}>{project.description_short}</p>
         </div>
         </>
     )
@@ -40,21 +41,22 @@ function ProjectCardContents(project: Experience) {
 
 
 function ProjectCardWrapper(project: Experience, index: number) {
-    const className = "experienceCardWrapper relative flex mx-1 sm:mx-0 sm:!flex-row"
-    if (project.href) {
+    const className = "experienceCardWrapper relative flex mx-1 sm:mx-0 sm:!flex-row scroll-mt-30"
+    const projectID = project.name.replaceAll(" ", "");
+    if (!CURRENT_PATH.startsWith(PROJECTS_ROOT)) {
         return (
             <a 
                 key={index} 
-                id={project.name} 
+                id={projectID}
                 className={className}
-                href={PROJECTS_ROOT+project.href}
+                href={(project.href) ? PROJECTS_ROOT+"/"+project.href : PROJECTS_ROOT+"/#"+projectID}
             >
                 {ProjectCardContents(project)}
             </a>
         )
     }
     return (
-        <div key={index} id={project.name} className={className}>
+        <div key={index} id={projectID} className={className}>
             {ProjectCardContents(project)}
         </div>
     )
@@ -85,8 +87,7 @@ function MyTopProjects(number_of_projects: number) {
 
 function OtherProjects(number_of_projects: number) {
     const other_projects_to_show = OTHER_PROJECTS.slice(0, number_of_projects);
-    const currentPath = window.location.pathname;
-    if (currentPath != PROJECTS_ROOT) {
+    if (!CURRENT_PATH.startsWith(PROJECTS_ROOT)) {
         return (
         <a href={PROJECTS_ROOT}>
             <button>

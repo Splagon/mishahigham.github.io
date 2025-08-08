@@ -3,7 +3,8 @@ import "../index.css"
 import Experience, { getDateRangeString } from "@types/Experience"
 import { getPersonalExperiencesInfo } from "@utils/getPersonalExperiences";
 
-const PROJECTS_ROOT = '/projects'
+const EXPERIENCES_ROOT = '/experience'
+const CURRENT_PATH = window.location.pathname;
 
 const PERSONAL_EXPERIENCES = getPersonalExperiencesInfo(null,true);
 
@@ -32,7 +33,7 @@ function PersonalExperienceCardContents(project: Experience) {
                 </div>
                 <h4 className="flex text-right">{getDateRangeString(project)}</h4>
             </div>
-            <p className="line-clamp-3">{project.description_short}</p>
+            <p className={(!CURRENT_PATH.startsWith(EXPERIENCES_ROOT)) ? "line-clamp-3":""}>{project.description_short}</p>
         </div>
         </>
     )
@@ -40,23 +41,24 @@ function PersonalExperienceCardContents(project: Experience) {
 
 
 
-function PersonalExperiencesCardWrapper(project: Experience, index: number) {
-    const className = "experienceCardWrapper relative flex mx-1 sm:mx-0 sm:!flex-row"
-    if (project.href) {
+function PersonalExperiencesCardWrapper(experience: Experience, index: number) {
+    const className = "experienceCardWrapper relative flex mx-1 sm:mx-0 sm:!flex-row scroll-mt-30"
+    const experienceID = experience.name.replaceAll(" ", "");
+    if (!CURRENT_PATH.startsWith(EXPERIENCES_ROOT)) {
         return (
             <a 
                 key={index} 
-                id={project.name} 
+                id={experienceID}
                 className={className}
-                href={PROJECTS_ROOT+project.href}
+                href={(experience.href) ? EXPERIENCES_ROOT+"/"+experience.href : EXPERIENCES_ROOT+"/#"+experienceID}
             >
-                {PersonalExperienceCardContents(project)}
+                {PersonalExperienceCardContents(experience)}
             </a>
         )
     }
     return (
-        <div key={index} id={project.name} className={className}>
-            {PersonalExperienceCardContents(project)}
+        <div key={index} id={experienceID} className={className}>
+            {PersonalExperienceCardContents(experience)}
         </div>
     )
 }
@@ -74,19 +76,29 @@ function PersonalExperiencesWrapper(_title: string, _id: string, _projects: Expe
     )
 }
 
-function MyTopPersonalExperiences(number_of_projects: number) {
+function ShowPersonalExperiences(number_of_projects: number) {
     const other_projects_to_show = PERSONAL_EXPERIENCES.slice(0, number_of_projects);
-    if (other_projects_to_show.length > 0) {
+    if (number_of_projects > 0) {
         return (
             PersonalExperiencesWrapper("Experience", "other_projects_container", other_projects_to_show)
         )
     }
-    const currentPath = window.location.pathname;
-    if (currentPath == PROJECTS_ROOT) { return null };
+    if (CURRENT_PATH.startsWith(EXPERIENCES_ROOT)) { return null };
     return (
-      <a href={PROJECTS_ROOT}>
+      <a href={EXPERIENCES_ROOT}>
         <button>
             See Other Personal Experiences
+        </button>
+      </a>  
+    );
+}
+
+function MorePersonalExperiences() {
+    if (CURRENT_PATH.startsWith(EXPERIENCES_ROOT)) { return null };
+    return (
+      <a href={EXPERIENCES_ROOT}>
+        <button>
+            See Experiences
         </button>
       </a>  
     );
@@ -100,7 +112,8 @@ export default function PersonalExperienceViewer({ number_of_projects = Number.M
     if (number_of_projects > 0) {
         return (
             <div className="mx-4 px-1">
-                {MyTopPersonalExperiences(number_of_projects)}
+                {ShowPersonalExperiences(number_of_projects)}
+                {MorePersonalExperiences()}
             </div>
         )
     }
