@@ -4,7 +4,8 @@ import { ChevronDown } from "lucide-react";
 
 import { useSticky } from "@hooks/useSticky";
 import SequentialParagraphs from "@components/SequentialParagraphs";
-import ProjectViewer from "@components/Experiencesviewer/Projects/index";
+import ProjectViewer from "@components/ExperiencesViewer/Projects/index";
+import PersonalExperiencesViewer from "@components/ExperiencesViewer/PersonalExperiences/index";
 import Navbar from "@components/Navbar/index"
 import mah_logo_no_bg_black_border from '@assets/mah_logo_no_bg_black_border.png';
 import './index.css'
@@ -16,7 +17,7 @@ const Home: React.FC = () => {
 
   return (
     <div className="flex flex-col gap-3 items-center">
-      <div id="home/about" className="flex flex-col gap-3 page primary">
+      <div id="home_about" className="flex flex-col gap-3 page primary">
         <img
           src={mah_logo_no_bg_black_border}
           alt="MAH"
@@ -49,9 +50,14 @@ const Home: React.FC = () => {
 
       <Navbar sticky={sticky} currentPath={currentPath} ref={navRef} />
 
-      <div id="home/top_projects" className="flex flex-col gap-3 page">
+      <div id="home_top_projects" className="flex flex-col gap-3 page">
         <ProjectViewer number_of_projects={3}></ProjectViewer>
       </div>
+
+      <div id="home_personal_experience" className="flex flex-col gap-3 page">
+        <PersonalExperiencesViewer />
+      </div>
+      
     </div>
   );
 };

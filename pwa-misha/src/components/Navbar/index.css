@@ -3,14 +3,15 @@
 :root{
     --nav-element-font: "Outfit";
     --nav-element-unselected-colour: gray;
-    --nav-element-hover-colour: #ff4800;
+    --nav-element-hover-colour: var(--colour-secondary);
     --nav-element-pressed-colour: color-mix(in srgb, var(--nav-element-hover-colour), transparent 30%);
     --nav-element-selected-colour: var(--colour);
 }
 
 nav {
-    background-color: var(--colour-bg);
-    filter: drop-shadow(0 0 0.5em color-mix(in srgb, var(--colour), transparent 10%));
+    background-color: var(--colour-bg-strong);
+    /* filter: drop-shadow(0 0 0.5em color-mix(in srgb, var(--colour), transparent 10%)); */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.35);
     height: 60px
 }
 

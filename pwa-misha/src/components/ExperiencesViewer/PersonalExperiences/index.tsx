@@ -26,8 +26,11 @@ function PersonalExperienceCardContents(project: Experience) {
         {(project.image) ? PersonalExperiencesCardImage(project) : null}
         <div className="info z-0 sm:!ps-6">
             <div className="flex gap-3">
-                <h3 className="flex-grow">{project.name}</h3>
-                <h4 className="flex-end text-right">{getDateRangeString(project)}</h4>
+                <div className="flex grow flex-col gap-1 justify-center m-0 p-0">
+                    <h3>{project.name}</h3>
+                    {(project.subtitle) ? (<h6>{project.subtitle}</h6>) : null}
+                </div>
+                <h4 className="flex text-right">{getDateRangeString(project)}</h4>
             </div>
             <p className="">{project.description_short}</p>
         </div>

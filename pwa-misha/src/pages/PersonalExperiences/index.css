@@ -1,0 +1,40 @@
+.experienceCardsContainer {
+    --vertical-line-colour: color-mix(in srgb, var(--colour), transparent 0%);
+}
+
+.experienceCardsContainer.vertLine::before {
+    z-index: 0;
+    content: '';
+    position: absolute;
+    top: -100px;
+    bottom: 0;
+    left: -20px;
+    width: 2px;
+    background-color: var(--vertical-line-colour);
+    backdrop-filter: blur(1em);
+    height: calc(100lvh - 32px);
+    
+}
+
+.experienceCardsContainer.vertLine .experienceCardWrapper .image::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -36px;
+    transform: translateY(-50%);
+    width: 11px;
+    height: 11px;
+    background-color: var(--vertical-line-colour);
+    z-index: 1;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+@media (width >= 40rem) {
+    .experienceCardsContainer.vertLine::before {
+        left: -73px
+    }
+    .experienceCardsContainer.vertLine .experienceCardWrapper .image::before {
+        left: -65px
+    }
+}

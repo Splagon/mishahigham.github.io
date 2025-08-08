@@ -28,8 +28,8 @@ function ProjectCardContents(project: Experience) {
         {(project.image) ? ProjectCardImage(project) : null}
         <div className="info z-0 sm:!ps-6">
             <div className="flex gap-3">
-                <h3 className="flex-grow">{project.name}</h3>
-                <h4 className="flex-end text-right">{getDateRangeString(project)}</h4>
+                <h3 className="flex grow">{project.name}</h3>
+                <h4 className="flex end text-right">{getDateRangeString(project)}</h4>
             </div>
             <p className="">{project.description_short}</p>
         </div>
@@ -85,20 +85,22 @@ function MyTopProjects(number_of_projects: number) {
 
 function OtherProjects(number_of_projects: number) {
     const other_projects_to_show = OTHER_PROJECTS.slice(0, number_of_projects);
+    const currentPath = window.location.pathname;
+    if (currentPath != PROJECTS_ROOT) {
+        return (
+        <a href={PROJECTS_ROOT}>
+            <button>
+                See Other Projects
+            </button>
+        </a>  
+        );
+    };
     if (other_projects_to_show.length > 0) {
         return (
             ProjectsWrapper("Other Projects", "other_projects_container", other_projects_to_show)
         )
     }
-    const currentPath = window.location.pathname;
-    if (currentPath == PROJECTS_ROOT) { return null };
-    return (
-      <a href={PROJECTS_ROOT}>
-        <button>
-            See Other Projects
-        </button>
-      </a>  
-    );
+    return null;
 }
 
 type ProjectViewerProps = {

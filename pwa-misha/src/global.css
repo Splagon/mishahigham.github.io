@@ -1,0 +1,277 @@
+@import "tailwindcss";
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  --colour-yellow: #ffdc50;
+  --colour-yellow-strong: #f3c643;
+  --colour-yellow-subtle: #ffe88b;
+
+  --colour-deep-navy: #051828;
+  --colour-deep-navy-strong: #031421;
+  --colour-deep-navy-subtle: #102333;
+
+  color-scheme: light dark;
+  --colour: var(--colour-deep-navy);
+  --colour-strong: var(--colour-deep-navy-strong); 
+  --colour-strong: var(--colour-deep-navy-subtle);
+
+  --colour-bg: var(--colour-yellow-subtle);
+  --colour-bg-strong: var(--colour-yellow-strong);
+
+  --secondary-colour: #00d9ff;
+  --colour-white: #f2fbfc;
+
+  color: var(--colour);
+  background-color: var(--colour-bg);
+  overflow-x: hidden;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --colour: var(--colour-yellow);
+  
+    --colour-strong: var(--colour-yellow-strong); 
+    --colour-strong: var(--colour-yellow-subtle);
+
+    --colour-bg: var(--colour-deep-navy);
+    --colour-bg-strong: var(--colour-deep-navy-strong);
+  }
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-family: "Playwrite";
+}
+h2 {
+  font-family: "Playwrite";
+}
+h3 {
+  font-family: "Playfair";
+}
+h4 {
+  font-family: "Playfair";
+}
+p {
+  font-family: "Outfit";
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 700;
+  font-family: "Outfit";
+  --button-colour: var(--colour);
+  color: var(--button-colour);
+  background-color: color-mix(in srgb, var(--colour-yellow), var(--colour-white) 15%);
+  box-shadow: 3px 3px;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:focus,
+button:focus-visible {
+  box-shadow: 2px 2px;
+  margin-left: 1px;
+  margin-top: 1px;
+  color: color-mix(in srgb, var(--button-colour), var(--colour-white) 20%);
+}
+
+@media (prefers-color-scheme: dark) {
+  button {
+    color: var(--colour);
+    background-color: color-mix(in srgb, var(--colour-bg), var(--colour-white) 3%);
+    box-shadow: 2px 2px;
+  }
+  button:focus,
+  button:focus-visible {
+    box-shadow: 1px 1px;
+    color: color-mix(in srgb, var(--button-colour), var(--colour-white) 30%);
+  }
+}
+
+@layer base {
+  @font-face {
+  font-family: 'Outfit';
+  src: url('/fonts/Outfit/Outfit-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  }
+  @font-face {
+    font-family: 'Outfit';
+    src: url('/fonts/Outfit/Outfit-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Outfit';
+    src: url('/fonts/Outfit/Outfit-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Outfit';
+    src: url('/fonts/Outfit/Outfit-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Outfit';
+    src: url('/fonts/Outfit/Outfit-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Outfit';
+    src: url('/fonts/Outfit/Outfit-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Outfit';
+    src: url('/fonts/Outfit/Outfit-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Outfit';
+    src: url('/fonts/Outfit/Outfit-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Outfit';
+    src: url('/fonts/Outfit/Outfit-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Playwrite';
+    src: url('/fonts/PlaywritePL/PlaywritePL-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Playwrite';
+    src: url('/fonts/PlaywritePL/PlaywritePL-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Playwrite';
+    src: url('/fonts/PlaywritePL/PlaywritePL-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Playwrite';
+    src: url('/fonts/PlaywritePL/PlaywritePL-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Playfair';
+    src: url('/fonts/Playfair/PlayfairDisplay-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Playfair';
+    src: url('/fonts/Playfair/PlayfairDisplay-BlackItalic.woff2') format('woff2');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Playfair';
+    src: url('/fonts/Playfair/PlayfairDisplay-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Playfair';
+    src: url('/fonts/Playfair/PlayfairDisplay-ExtraBoldItalic.woff2') format('woff2');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Playfair';
+    src: url('/fonts/Playfair/PlayfairDisplay-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Playfair';
+    src: url('/fonts/Playfair/PlayfairDisplay-BoldItalic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Playfair';
+    src: url('/fonts/Playfair/PlayfairDisplay-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Playfair';
+    src: url('/fonts/Playfair/PlayfairDisplay-SemiBoldItalic.woff2') format('woff2');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Playfair';
+    src: url('/fonts/Playfair/PlayfairDisplay-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Playfair';
+    src: url('/fonts/Playfair/PlayfairDisplay-MediumItalic.woff2') format('woff2');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Playfair';
+    src: url('/fonts/Playfair/PlayfairDisplay-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Playfair';
+    src: url('/fonts/Playfair/PlayfairDisplay-RegularItalic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+}
