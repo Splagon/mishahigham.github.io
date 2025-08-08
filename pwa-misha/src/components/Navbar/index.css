@@ -9,24 +9,44 @@
 }
 
 nav {
-    background-color: var(--colour-bg-strong);
+    backdrop-filter: blur(5px);
+    background-color: color-mix(in srgb, var(--colour-bg), transparent 90%);
     /* filter: drop-shadow(0 0 0.5em color-mix(in srgb, var(--colour), transparent 10%)); */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.35);
+    box-shadow: 0px 1px 3px rgba(255, 255, 255, 0.35);
+    filter: drop-shadow(2px 2px 0.5em rgba(0,0,0,0.35));
     height: 60px
 }
+
+
 
 .nav-link {
     font-family: var(--nav-element-font);
     color: var(--nav-element-unselected-colour);
+
+    --nav-link-transparency-perc: 40%;
+
+    backdrop-filter: blur(8px);
+    background-color: color-mix(in srgb, var(--colour-yellow), transparent var(--nav-link-transparency-perc));
+    box-shadow: 1px 2px rgba(255, 255, 255, 0.50);
+    filter: drop-shadow(2px 2px 0.5em rgba(0,0,0,0.35));
+    border-radius: 100px;
+
+    padding: 2px 15px;
+    font-family: var(--nav-element-font);
+    color: var(--nav-element-unselected-colour);
+
+    --nav-link-selected-bg: color-mix(in srgb, var(--colour-yellow-strong), transparent var(--nav-link-transparency-perc));
 }
 .nav-link:hover {
     color: var(--nav-element-hover-colour);
+    background-color: var(--nav-link-selected-bg);
 }
 .nav-link:active {
     color: var(--nav-element-pressed-colour);
 }
 .nav-link.selected {
     color: var(--nav-element-selected-colour);
+    background-color: var(--nav-link-selected-bg);
 }
 .nav-link.selected:hover {
     color: color-mix(in srgb, var(--nav-element-selected-colour), transparent 30%);
@@ -35,7 +55,13 @@ nav {
     color: color-mix(in srgb, var(--nav-element-selected-colour), transparent 30%);
 }
 
-.nav-element{
-    font-family: var(--nav-element-font);
-    color: var(--nav-element-unselected-colour);
+@media (prefers-color-scheme: dark) {
+    .nav-link {
+        --nav-link-transparency-perc: 20%;
+        background-color: color-mix(in srgb, var(--colour-deep-navy-strong), transparent 100%);
+        color: color-mix(in srgb, var(--colour-yellow-subtle), transparent 40%);
+
+        --nav-link-selected-bg: color-mix(in srgb, var(--colour-bg-strong), transparent var(--nav-link-transparency-perc));
+
+    }
 }

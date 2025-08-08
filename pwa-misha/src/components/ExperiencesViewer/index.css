@@ -1,6 +1,7 @@
 .experienceCardsContainer {
     display: flex;
     flex-direction: column;
+    max-width: 35em;
     --ecw-colour: var(--colour-white);
     --ecw-border-colour: color-mix(in srgb, var(--colour-yellow), white 75%);
     --ecw-background-colour: color-mix(in srgb, var(--colour-yellow), transparent 40%);
@@ -21,14 +22,12 @@
     z-index: 0;
     content: '';
     position: absolute;
-    top: -100px;
+    top: -20px;
     bottom: 0;
     left: -20px;
     width: 2px;
     background-color: var(--vertical-line-colour);
-    backdrop-filter: blur(1em);
-    height: calc(100lvh - 32px);
-    
+    border-radius: 100%;
 }
 
 .experienceCardWrapper {
@@ -106,6 +105,13 @@
         font-weight: 600;
         font-size: 1.1rem;
         line-height: 1em;
+        margin-block: auto;
+    }
+    h6 {
+        font-weight: 600;
+        font-size: 0.85rem;
+        line-height: 1em;
+        font-family: "Playfair";
         margin-block: auto;
     }
     p {

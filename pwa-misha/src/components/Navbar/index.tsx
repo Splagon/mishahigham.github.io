@@ -43,7 +43,8 @@ const Navbar = forwardRef<HTMLElement, NavbarProps>(({ sticky, currentPath }, re
 
           return (
             <React.Fragment key={page.name}>
-              {idx !== 0 && <span className="nav-element">|</span>}
+              {//idx !== 0 && <span className="nav-element">|</span>
+              }
               <li className="flex items-center gap-2">
                 <a
                   href={page.href}

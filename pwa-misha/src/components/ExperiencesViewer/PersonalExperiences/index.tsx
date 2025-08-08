@@ -32,7 +32,7 @@ function PersonalExperienceCardContents(project: Experience) {
                 </div>
                 <h4 className="flex text-right">{getDateRangeString(project)}</h4>
             </div>
-            <p className="">{project.description_short}</p>
+            <p className="line-clamp-3">{project.description_short}</p>
         </div>
         </>
     )
@@ -64,7 +64,7 @@ function PersonalExperiencesCardWrapper(project: Experience, index: number) {
 function PersonalExperiencesWrapper(_title: string, _id: string, _projects: Experience[]) {
     return (
         <>
-            <h2 className="font-['playwrite'] text-2xl mb-2 sm:!mb-5 sm:text-4xl md:text-5xlm">{_title}</h2>
+            <h2 className="font-['playwrite'] text-2xl mb-2 sm:!mb-5 md:!mb-10 sm:text-4xl md:text-5xlm">{_title}</h2>
             <div id={_id} className="experienceCardsContainer vertLine gap-3 py-3 mb-5 sm:!gap-4">
                 { _projects.map((project, index) => (
                     PersonalExperiencesCardWrapper(project, index)

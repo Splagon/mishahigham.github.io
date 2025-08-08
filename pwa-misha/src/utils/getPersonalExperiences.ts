@@ -10,7 +10,8 @@ const PERSONAL_EXPERIENCES: Experience[] = [
         location: "King's College London",
         start_date: new Date("2021-09-01"),
         end_date: new Date("2024-05-01"),
-        description_short: "King's College London - Final Grade (1:1)",
+        subtitle: "King's College London",
+        description_short: "Final Grade (1:1)",
         description_long: "",
         bullet_point_description: "",
         skills: [CSharp]

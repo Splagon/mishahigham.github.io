@@ -21,7 +21,7 @@
   --colour-bg: var(--colour-yellow-subtle);
   --colour-bg-strong: var(--colour-yellow-strong);
 
-  --secondary-colour: #00d9ff;
+  --colour-secondary: #2cb0c8;
   --colour-white: #f2fbfc;
 
   color: var(--colour);
@@ -43,6 +43,8 @@
 
     --colour-bg: var(--colour-deep-navy);
     --colour-bg-strong: var(--colour-deep-navy-strong);
+
+    --colour-secondary: #00d9ff;
   }
 }
 
@@ -79,7 +81,8 @@ button {
   font-family: "Outfit";
   --button-colour: var(--colour);
   color: var(--button-colour);
-  background-color: color-mix(in srgb, var(--colour-yellow), var(--colour-white) 15%);
+  background-color: var(--colour-yellow-strong);
+  /* background-color: color-mix(in srgb, var(--colour-yellow-strong), var(--colour-white) 15%); */
   box-shadow: 3px 3px;
   cursor: pointer;
   transition: border-color 0.25s;

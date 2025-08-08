@@ -63,7 +63,7 @@ function ProjectCardWrapper(project: Experience, index: number) {
 function ProjectsWrapper(_title: string, _id: string, _projects: Experience[]) {
     return (
         <>
-            <h2 className="font-['playwrite'] text-2xl mb-2 sm:!mb-5 sm:text-4xl md:text-5xlm">{_title}</h2>
+            <h2 className="font-['playwrite'] text-2xl mb-2 sm:!mb-5 md:!mb-10 sm:text-4xl md:text-5xlm">{_title}</h2>
             <div id={_id} className="experienceCardsContainer gap-3 py-3 mb-5 sm:!gap-4">
                 { _projects.map((project, index) => (
                     ProjectCardWrapper(project, index)

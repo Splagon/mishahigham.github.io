@@ -16,7 +16,7 @@ const Home: React.FC = () => {
   const currentPath = window.location.pathname;
 
   return (
-    <div className="flex flex-col gap-3 items-center">
+    <div className="flex flex-col items-center">
       <div id="home_about" className="flex flex-col gap-3 page primary">
         <img
           src={mah_logo_no_bg_black_border}
@@ -54,7 +54,7 @@ const Home: React.FC = () => {
         <ProjectViewer number_of_projects={3}></ProjectViewer>
       </div>
 
-      <div id="home_personal_experience" className="flex flex-col gap-3 page">
+      <div id="home_personal_experience" className="flex flex-col gap-3 page overflow-visible">
         <PersonalExperiencesViewer />
       </div>
       
