@@ -42,7 +42,12 @@ const Navbar = forwardRef<HTMLElement, NavbarProps>(({ sticky, currentPath }, re
     >
       <ul className="flex items-center gap-4 text-lg select-none">
         {pages.map((page, idx) => {
-          const isCurrentPage = page.href === currentPath;
+          const isCurrentPage = (
+            (currentPath=="/") ? 
+              page.href === currentPath :
+              page.href.startsWith(currentPath)
+          )
+          
 
           return (
             <React.Fragment key={page.name}>

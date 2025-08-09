@@ -40,9 +40,9 @@ export default function RenderExperience({experience_key, experience} : RenderEx
             </div>
             <div className="experienceRenderCard flex-col gap-3">
                 {(experience.subtitle) ? (<h2>{experience.subtitle}</h2>) : null}
-                <p>
+                <h6>
                         {experience.description_long ? experience.description_long : experience.description_short}
-                </p>
+                </h6>
                 {(experience.bullet_point_description) ? (
                     <ul>
                         {experience.bullet_point_description.map((bullet_point: string) =>

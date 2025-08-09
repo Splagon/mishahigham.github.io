@@ -7,14 +7,21 @@
     --ecw-border-colour: color-mix(in srgb, var(--colour-yellow), white 75%);
     --ecw-border-width: 1px;
     --ecw-border-radius: 1rem;
-    --ecw-background-colour: color-mix(in srgb, var(--colour-yellow), transparent 40%);
+    /* --ecw-background-colour: color-mix(in srgb, var(--colour-yellow), transparent 40%); */
+    --ecw-background-colour: color-mix(in srgb, white, transparent 70%);
     --vertical-line-colour: color-mix(in srgb, var(--colour), transparent 0%);
+
+    --ecw-box-shadow: inset -1px -2px rgba(255, 255, 255, 0.50);
+    --ecw-shadow-filter: drop-shadow(2px 2px 0.2em rgba(126,126,126,0.35));  
+    
 }
 
 @media (prefers-color-scheme: dark) {
     .experienceCardsContainer {
        --ecw-border-colour: color-mix(in srgb, var(--ecw-colour), black 35%); 
        --ecw-background-colour: color-mix(in srgb, var(--ecw-colour), transparent 95%);
+       --ecw-box-shadow: inset -1px -2px rgba(200, 200, 200, 0.5);
+       --ecw-shadow-filter: drop-shadow(2px 2px 0.2em rgba(0, 0, 0, 0.35)); 
     }
 }
 
@@ -49,18 +56,26 @@
     align-items: center;
     
     img {
-        border-width: var(--ecw-border-width);
+        /* border-width: var(--ecw-border-width); */
         border-radius: var(--ecw-border-radius);
         border-color: var(--ecw-border-colour);
-        background-color: var(--colour-bg);
+        background-color: color-mix(in srgb, white, var(--colour-bg) 40%);
         object-fit: cover;
-        height: 100%;        
+        height: 100%;
+        filter: var(--ecw-shadow-filter);    
     }
     img.needsBG {
         background-color: var(--colour-yellow-strong);
     }
     
 }
+
+@media(prefers-color-scheme: dark) {
+    .experienceCardWrapper .image img {
+        background-color: color-mix(in srgb, white, var(--colour-bg-strong) 90%);
+    }
+}
+
 .experienceCardsContainer.vertLine .experienceCardWrapper .image::before {
     content: '';
     position: absolute;
@@ -87,14 +102,16 @@
 .experienceCardWrapper .info {
     position: relative;
     z-index: 2;
-    border-width: var(--ecw-border-width);
+    /* border-width: var(--ecw-border-width); */
     border-radius: var(--ecw-border-radius);
     border-color: var(--ecw-border-colour);
     background-color: var(--ecw-background-colour);
     backdrop-filter:blur(3px);
     padding: 0.8rem;
     text-align: start;
-    width:100%; 
+    width:100%;
+    box-shadow: var(--ecw-box-shadow);
+    filter: var(--ecw-shadow-filter);
     h3 {
         font-weight: 700;
         font-size: 1.2rem;
@@ -124,18 +141,27 @@
 .experienceRenderCard {
     display: flex;
     align-items: center;
-    border-width: var(--ecw-border-width);
+    /* border-width: var(--ecw-border-width); */
     border-radius: var(--ecw-border-radius);
     border-color: var(--ecw-border-colour);
-    background-color: color-mix(in srgb, var(--colour-bg-strong), transparent 30%);
+    background-color: color-mix(in srgb, var(--colour-bg-strong), transparent 20%);
     backdrop-filter: blur(10px);
     padding-block: 13px;
     padding-inline: 15px;
     width: 100%;
+    box-shadow: var(--ecw-box-shadow);
+    filter: var(--ecw-shadow-filter);
 
     h1 {
         font-size: 1.1em;
+        font-weight: 600;
         text-align: left;
+    }
+    h6 {
+        font-weight: 600;
+    }
+    p {
+        font-size: 0.9em;
     }
 
     ul {

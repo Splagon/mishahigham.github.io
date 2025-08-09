@@ -90,7 +90,8 @@ button {
   margin-bottom: 5px;
 }
 button:focus,
-button:focus-visible {
+button:focus-visible,
+button:active {
   box-shadow: 2px 2px;
   margin-left: 1px;
   margin-top: 1px;
