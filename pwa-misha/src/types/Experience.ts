@@ -54,3 +54,7 @@ export function getDateRangeString(experience: Experience, alwaysIncludeMonths?:
     }
     return experience_start_date_year + " - " + experience_end_date_year
 }
+
+export function getExperienceKey(experience: Experience) {
+    return experience.name.replaceAll(' ','')
+}

@@ -6,7 +6,7 @@ import { getPersonalExperiencesInfo } from "@utils/getPersonalExperiences";
 const EXPERIENCES_ROOT = '/experience'
 const CURRENT_PATH = window.location.pathname;
 
-const PERSONAL_EXPERIENCES = getPersonalExperiencesInfo(null,true);
+const PERSONAL_EXPERIENCES = getPersonalExperiencesInfo(true);
 
 function PersonalExperiencesCardImage(project: Experience) {
     const img_bg = (project.needs_bg) ? "needsBG" + " " : ""
@@ -105,14 +105,14 @@ function MorePersonalExperiences() {
 }
 
 type PersonalExperienceViewerProps = {
-  number_of_projects?: number;
+  number_of_experiences?: number;
 };
 
-export default function PersonalExperienceViewer({ number_of_projects = Number.MAX_VALUE }: PersonalExperienceViewerProps) {
-    if (number_of_projects > 0) {
+export default function PersonalExperienceViewer({ number_of_experiences = Number.MAX_VALUE }: PersonalExperienceViewerProps) {
+    if (number_of_experiences > 0) {
         return (
             <div className="mx-4 px-1">
-                {ShowPersonalExperiences(number_of_projects)}
+                {ShowPersonalExperiences(number_of_experiences)}
                 {MorePersonalExperiences()}
             </div>
         )

@@ -51,11 +51,11 @@ const Home: React.FC = () => {
       <Navbar sticky={sticky} currentPath={currentPath} ref={navRef} />
 
       <div id="home_top_projects" className="flex flex-col gap-3 page">
-        <ProjectViewer number_of_projects={3}></ProjectViewer>
+        <ProjectViewer number_of_projects={3}/>
       </div>
 
       <div id="home_personal_experience" className="flex flex-col gap-3 page overflow-visible">
-        <PersonalExperiencesViewer />
+        <PersonalExperiencesViewer number_of_experiences={4}/>
       </div>
       
     </div>

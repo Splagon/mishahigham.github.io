@@ -1,9 +1,12 @@
 .experienceCardsContainer {
     display: flex;
     flex-direction: column;
+    width: 100%;
     max-width: 35em;
     --ecw-colour: var(--colour-white);
     --ecw-border-colour: color-mix(in srgb, var(--colour-yellow), white 75%);
+    --ecw-border-width: 1px;
+    --ecw-border-radius: 1rem;
     --ecw-background-colour: color-mix(in srgb, var(--colour-yellow), transparent 40%);
     --vertical-line-colour: color-mix(in srgb, var(--colour), transparent 0%);
 }
@@ -31,9 +34,6 @@
 }
 
 .experienceCardWrapper {
-    --ecw-border-width: 1px;
-    --ecw-border-radius: 1rem;
-
     position: relative;
     align-items: center;
 }
@@ -118,5 +118,42 @@
         font-size: 1.0rem;
         font-family: "Outfit";
         padding-top: 5px;
+    }
+}
+
+.experienceRenderCard {
+    display: flex;
+    align-items: center;
+    border-width: var(--ecw-border-width);
+    border-radius: var(--ecw-border-radius);
+    border-color: var(--ecw-border-colour);
+    background-color: color-mix(in srgb, var(--colour-bg-strong), transparent 30%);
+    backdrop-filter: blur(10px);
+    padding-block: 13px;
+    padding-inline: 15px;
+    width: 100%;
+
+    h1 {
+        font-size: 1.1em;
+        text-align: left;
+    }
+
+    ul {
+        text-align: start;
+        li {
+            margin-inline-start: 1rem;
+            padding-bottom: 5px;
+        }
+        li::before{
+            content: '';
+            position: absolute;
+            left: 10px;
+            transform: translateY(160%);
+            width: 6px;
+            height: 6px;
+            background-color: var(--colour);
+            z-index: 1;
+            border-radius: 50%;
+        }
     }
 }

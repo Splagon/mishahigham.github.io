@@ -1,8 +1,10 @@
-import Experience from "@types/Experience"
+import Experience, {getExperienceKey} from "@types/Experience"
 import { CSharp } from "@types/Skill"
 import footyRushPNG from "@assets/projects/FootyRush.png"
 import greggorfcPNG from "@assets/projects/GFC.png"
 import KclPNG from "@assets/projects/KCL.png"
+import PetraiReport from "../../public/assets/files/PETRAI_Report.pdf"
+import ProjectViewer from "../components/ExperiencesViewer/Projects"
 
 const TOP_PROJECTS: Experience[] = [
     { name: "Footy Rush",
@@ -21,7 +23,13 @@ const TOP_PROJECTS: Experience[] = [
         description_short: "An interactive, gamified Finance Tracker - KCL coursework",
         description_long: "A website made to allow for users to track income and expenditure using gamification to encourage users to stick to their goals. Made as part of a coursework at King's College London.",
         bullet_point_description: ["Partook in a website development project using Django, Python, and HTML", "Developed the front- and backend of the system which allows the user to log into their own account and protect their confidential financial data.","Incorporated package APIs to allow to up-to-date conversions between currencies.","Developed the gamification elements of the system such as adding a fun, interactive mascot to encourage users to stay within targets and user groups to allow for friendly competition to encourage meeting targets.","Used Git and GitHub to employ automated testing protections on master and peer code approval and reviews to maintain code quality and ensure functionality.","Developed as part of a group of 8."]
-    }
+    },
+    { name: "PETRAI",
+        image: KclPNG,
+        //href: PetraiReport,
+        start_date: new Date("2023-09-01"),
+        end_date: new Date("2024-05-30"),
+        description_short: "A self-trained Natural Language Translator between English and Russian - KCL Final Year Dissertation"    }
 ]
 
 const OTHER_PROJECTS: Experience[] = [
@@ -37,10 +45,8 @@ const OTHER_PROJECTS: Experience[] = [
 
 const PROJECTS = TOP_PROJECTS.concat(OTHER_PROJECTS)
 
-export function getProjectsInfo(project_name: string) {
-    return (!project_name) ? PROJECTS : (
-        PROJECTS.filter((project, i) => project.name == project_name)
-    )
+export function getProjectsInfo() {
+    return PROJECTS
 }
 
 export function getTopProjectsInfo() {
@@ -52,4 +58,9 @@ export function getOtherProjectsInfo(sortedByDate: boolean = false) {
         return OTHER_PROJECTS.sort((a, b) => b.end_date.getTime() - a.end_date.getTime());
     }
     return OTHER_PROJECTS
+}
+
+export function getProjectByKey(key: string): Experience {
+    console.log("gpbk", key);
+    return PROJECTS.filter((exp, i) => getExperienceKey(exp) == key)[0]
 }

@@ -2,6 +2,7 @@ import React from "react";
 import "../index.css"
 import Experience, { getDateRangeString } from "@types/Experience"
 import { getTopProjectsInfo, getOtherProjectsInfo } from "@utils/getProjectsInfo";
+import { showExperienceRenderer } from "../RenderExperience";
 
 const PROJECTS_ROOT = '/projects'
 const CURRENT_PATH = window.location.pathname;
@@ -43,23 +44,22 @@ function ProjectCardContents(project: Experience) {
 function ProjectCardWrapper(project: Experience, index: number) {
     const className = "experienceCardWrapper relative flex mx-1 sm:mx-0 sm:!flex-row scroll-mt-30"
     const projectID = project.name.replaceAll(" ", "");
-    if (!CURRENT_PATH.startsWith(PROJECTS_ROOT)) {
-        return (
-            <a 
-                key={index} 
-                id={projectID}
-                className={className}
-                href={(project.href) ? PROJECTS_ROOT+"/"+project.href : PROJECTS_ROOT+"/#"+projectID}
-            >
-                {ProjectCardContents(project)}
-            </a>
-        )
-    }
     return (
-        <div key={index} id={projectID} className={className}>
+        <a 
+            key={index} 
+            id={projectID}
+            className={className}
+            onClick={()=> {(CURRENT_PATH.startsWith(PROJECTS_ROOT)) ? (showExperienceRenderer()): null}}
+            href={(project.href) ? PROJECTS_ROOT+"/"+project.href : PROJECTS_ROOT+"#"+projectID}
+        >
             {ProjectCardContents(project)}
-        </div>
+        </a>
     )
+    // return (
+    //     <div key={index} id={projectID} className={className}>
+    //         {ProjectCardContents(project)}
+    //     </div>
+    // )
 }
 
 function ProjectsWrapper(_title: string, _id: string, _projects: Experience[]) {
